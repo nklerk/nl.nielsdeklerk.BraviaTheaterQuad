@@ -1,0 +1,283 @@
+{
+  "triggers": [
+    {
+      "id": "input_changed",
+      "title": {
+        "en": "Input source changed",
+        "nl": "Ingangsbron gewijzigd",
+        "de": "Eingangsquelle geändert",
+        "fr": "Source d'entrée modifiée",
+        "es": "Fuente de entrada cambiada"
+      },
+      "tokens": [
+        {
+          "name": "input",
+          "type": "string",
+          "title": {
+            "en": "Input",
+            "nl": "Ingang",
+            "de": "Eingang",
+            "fr": "Entrée",
+            "es": "Entrada"
+          }
+        }
+      ]
+    },
+    {
+      "id": "volume_limit_reached",
+      "title": {
+        "en": "Volume limit was reached",
+        "nl": "Volumelimiet bereikt",
+        "de": "Lautstärkebegrenzung erreicht",
+        "fr": "Limite de volume atteinte",
+        "es": "Se alcanzó el límite de volumen"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "input_is",
+      "title": {
+        "en": "Input source is [[input]]",
+        "nl": "Ingangsbron is [[input]]",
+        "de": "Eingangsquelle ist [[input]]",
+        "fr": "La source d'entrée est [[input]]",
+        "es": "La fuente de entrada es [[input]]"
+      },
+      "args": [
+        {
+          "name": "input",
+          "type": "dropdown",
+          "values": [
+            { "id": "tv",        "label": { "en": "TV (eARC)",  "nl": "TV (eARC)",    "de": "TV (eARC)",     "fr": "TV (eARC)",    "es": "TV (eARC)"    } },
+            { "id": "hdmi1",     "label": { "en": "HDMI In",    "nl": "HDMI-ingang",  "de": "HDMI-Eingang",  "fr": "Entrée HDMI",  "es": "Entrada HDMI" } },
+            { "id": "spotify",   "label": { "en": "Spotify",    "nl": "Spotify",      "de": "Spotify",       "fr": "Spotify",      "es": "Spotify"      } },
+            { "id": "bluetooth", "label": { "en": "Bluetooth",  "nl": "Bluetooth",    "de": "Bluetooth",     "fr": "Bluetooth",    "es": "Bluetooth"    } },
+            { "id": "airplay2",  "label": { "en": "AirPlay",    "nl": "AirPlay",      "de": "AirPlay",       "fr": "AirPlay",      "es": "AirPlay"      } }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "set_volume_limit_mode",
+      "title": {
+        "en": "Set volume limit mode to...",
+        "nl": "Stel volumebegrenzermodus in op...",
+        "de": "Lautstärke-Begrenzungsmodus einstellen auf...",
+        "fr": "Définir le mode de limitation du volume sur...",
+        "es": "Establecer modo de límite de volumen en..."
+      },
+      "titleFormatted": {
+        "en": "Set volume limit mode to [[mode]]",
+        "nl": "Stel volumebegrenzermodus in op [[mode]]",
+        "de": "Lautstärke-Begrenzungsmodus einstellen auf [[mode]]",
+        "fr": "Définir le mode de limitation du volume sur [[mode]]",
+        "es": "Establecer modo de límite de volumen en [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "disabled",
+              "label": {
+                "en": "Disabled",
+                "nl": "Uitgeschakeld",
+                "de": "Deaktiviert",
+                "fr": "Désactivé",
+                "es": "Desactivado"
+              }
+            },
+            {
+              "id": "passive",
+              "label": {
+                "en": "Passive",
+                "nl": "Passief",
+                "de": "Passiv",
+                "fr": "Passif",
+                "es": "Pasivo"
+              }
+            },
+            {
+              "id": "active",
+              "label": {
+                "en": "Active",
+                "nl": "Actief",
+                "de": "Aktiv",
+                "fr": "Actif",
+                "es": "Activo"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "set_volume_limit_value",
+      "title": {
+        "en": "Set maximum volume to...",
+        "nl": "Stel maximaal volume in op...",
+        "de": "Maximale Lautstärke einstellen auf...",
+        "fr": "Définir le volume maximum sur...",
+        "es": "Establecer el volumen máximo en..."
+      },
+      "titleFormatted": {
+        "en": "Set maximum volume to [[volume]]",
+        "nl": "Stel maximaal volume in op [[volume]]",
+        "de": "Maximale Lautstärke einstellen auf [[volume]]",
+        "fr": "Définir le volume maximum sur [[volume]]",
+        "es": "Establecer el volumen máximo en [[volume]]"
+      },
+      "args": [
+        {
+          "name": "volume",
+          "type": "number",
+          "min": 1,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "volume_up_by",
+      "title": {
+        "en": "Increase volume by...",
+        "nl": "Verhoog volume met...",
+        "de": "Lautstärke erhöhen um...",
+        "fr": "Augmenter le volume de...",
+        "es": "Aumentar volumen en..."
+      },
+      "titleFormatted": {
+        "en": "Increase volume by [[steps]]",
+        "nl": "Verhoog volume met [[steps]]",
+        "de": "Lautstärke erhöhen um [[steps]]",
+        "fr": "Augmenter le volume de [[steps]]",
+        "es": "Aumentar volumen en [[steps]]"
+      },
+      "args": [
+        {
+          "name": "steps",
+          "type": "number",
+          "min": 1,
+          "max": 20,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "volume_down_by",
+      "title": {
+        "en": "Decrease volume by...",
+        "nl": "Verlaag volume met...",
+        "de": "Lautstärke verringern um...",
+        "fr": "Réduire le volume de...",
+        "es": "Reducir volumen en..."
+      },
+      "titleFormatted": {
+        "en": "Decrease volume by [[steps]]",
+        "nl": "Verlaag volume met [[steps]]",
+        "de": "Lautstärke verringern um [[steps]]",
+        "fr": "Réduire le volume de [[steps]]",
+        "es": "Reducir volumen en [[steps]]"
+      },
+      "args": [
+        {
+          "name": "steps",
+          "type": "number",
+          "min": 1,
+          "max": 20,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "set_input",
+      "title": {
+        "en": "Set input source to...",
+        "nl": "Stel ingangsbron in op...",
+        "de": "Eingangsquelle einstellen auf...",
+        "fr": "Définir la source d'entrée sur...",
+        "es": "Establecer fuente de entrada en..."
+      },
+      "titleFormatted": {
+        "en": "Set input source to [[input]]",
+        "nl": "Stel ingangsbron in op [[input]]",
+        "de": "Eingangsquelle einstellen auf [[input]]",
+        "fr": "Définir la source d'entrée sur [[input]]",
+        "es": "Establecer fuente de entrada en [[input]]"
+      },
+      "args": [
+        {
+          "name": "input",
+          "type": "dropdown",
+          "values": [
+            { "id": "tv",        "label": { "en": "TV (eARC)",  "nl": "TV (eARC)",    "de": "TV (eARC)",     "fr": "TV (eARC)",    "es": "TV (eARC)"    } },
+            { "id": "hdmi1",     "label": { "en": "HDMI In",    "nl": "HDMI-ingang",  "de": "HDMI-Eingang",  "fr": "Entrée HDMI",  "es": "Entrada HDMI" } },
+            { "id": "spotify",   "label": { "en": "Spotify",    "nl": "Spotify",      "de": "Spotify",       "fr": "Spotify",      "es": "Spotify"      } },
+            { "id": "bluetooth", "label": { "en": "Bluetooth",  "nl": "Bluetooth",    "de": "Bluetooth",     "fr": "Bluetooth",    "es": "Bluetooth"    } },
+            { "id": "airplay2",  "label": { "en": "AirPlay",    "nl": "AirPlay",      "de": "AirPlay",       "fr": "AirPlay",      "es": "AirPlay"      } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "set_drc",
+      "title": {
+        "en": "Set dynamic range compressor to...",
+        "nl": "Stel dynamisch bereikcompressor in op...",
+        "de": "Dynamikbereich-Kompressor einstellen auf...",
+        "fr": "Définir le compresseur de plage dynamique sur...",
+        "es": "Establecer compresor de rango dinámico en..."
+      },
+      "titleFormatted": {
+        "en": "Set dynamic range compressor to [[mode]]",
+        "nl": "Stel dynamisch bereikcompressor in op [[mode]]",
+        "de": "Dynamikbereich-Kompressor einstellen auf [[mode]]",
+        "fr": "Définir le compresseur de plage dynamique sur [[mode]]",
+        "es": "Establecer compresor de rango dinámico en [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            { "id": "auto", "label": { "en": "Auto",  "nl": "Automatisch", "de": "Automatisch", "fr": "Automatique", "es": "Automático"  } },
+            { "id": "on",   "label": { "en": "On",    "nl": "Aan",         "de": "An",          "fr": "Activé",      "es": "Activado"    } },
+            { "id": "off",  "label": { "en": "Off",   "nl": "Uit",         "de": "Aus",         "fr": "Désactivé",   "es": "Desactivado" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "set_hdmi_passthrough",
+      "title": {
+        "en": "Set HDMI passthrough to...",
+        "nl": "Stel HDMI-doorvoer in op...",
+        "de": "HDMI-Durchleitung einstellen auf...",
+        "fr": "Définir le passthrough HDMI sur...",
+        "es": "Establecer HDMI passthrough en..."
+      },
+      "titleFormatted": {
+        "en": "Set HDMI passthrough to [[mode]]",
+        "nl": "Stel HDMI-doorvoer in op [[mode]]",
+        "de": "HDMI-Durchleitung einstellen auf [[mode]]",
+        "fr": "Définir le passthrough HDMI sur [[mode]]",
+        "es": "Establecer HDMI passthrough en [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            { "id": "auto", "label": { "en": "Auto",  "nl": "Automatisch", "de": "Automatisch", "fr": "Automatique", "es": "Automático"  } },
+            { "id": "on",   "label": { "en": "On",    "nl": "Aan",         "de": "An",          "fr": "Activé",      "es": "Activado"    } },
+            { "id": "off",  "label": { "en": "Off",   "nl": "Uit",         "de": "Aus",         "fr": "Désactivé",   "es": "Desactivado" } }
+          ]
+        }
+      ]
+    }
+  ]
+}

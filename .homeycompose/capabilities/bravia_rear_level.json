@@ -1,0 +1,17 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Rear Level",
+    "nl": "Achterste niveau",
+    "de": "Heck-Pegel",
+    "fr": "Niveau arrière",
+    "es": "Nivel trasero"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "min": -10,
+  "max": 10,
+  "step": 1,
+  "decimals": 0
+}

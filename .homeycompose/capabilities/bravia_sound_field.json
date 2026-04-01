@@ -1,0 +1,27 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Sound Field",
+    "nl": "Geluidsveld",
+    "de": "Schallfeld",
+    "fr": "Champ sonore",
+    "es": "Campo sonoro"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "insightsTitleTrue": {
+    "en": "Sound field turned on",
+    "nl": "Geluidsveld ingeschakeld",
+    "de": "Schallfeld eingeschaltet",
+    "fr": "Champ sonore activé",
+    "es": "Campo sonoro activado"
+  },
+  "insightsTitleFalse": {
+    "en": "Sound field turned off",
+    "nl": "Geluidsveld uitgeschakeld",
+    "de": "Schallfeld ausgeschaltet",
+    "fr": "Champ sonore désactivé",
+    "es": "Campo sonoro desactivado"
+  }
+}

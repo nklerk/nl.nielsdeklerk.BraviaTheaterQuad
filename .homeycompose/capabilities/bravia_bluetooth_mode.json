@@ -1,0 +1,45 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Bluetooth Mode",
+    "nl": "Bluetooth-modus",
+    "de": "Bluetooth-Modus",
+    "fr": "Mode Bluetooth",
+    "es": "Modo Bluetooth"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": null,
+  "values": [
+    {
+      "id": "rx",
+      "title": {
+        "en": "Receiver",
+        "nl": "Ontvanger",
+        "de": "Empfänger",
+        "fr": "Récepteur",
+        "es": "Receptor"
+      }
+    },
+    {
+      "id": "tx",
+      "title": {
+        "en": "Transmitter",
+        "nl": "Zender",
+        "de": "Sender",
+        "fr": "Émetteur",
+        "es": "Transmisor"
+      }
+    },
+    {
+      "id": "off",
+      "title": {
+        "en": "Off",
+        "nl": "Uit",
+        "de": "Aus",
+        "fr": "Désactivé",
+        "es": "Desactivado"
+      }
+    }
+  ]
+}

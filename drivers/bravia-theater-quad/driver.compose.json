@@ -1,0 +1,288 @@
+{
+  "name": {
+    "en": "Bravia Theater Quad",
+    "nl": "Bravia Theater Quad",
+    "de": "Bravia Theater Quad",
+    "fr": "Bravia Theater Quad",
+    "es": "Bravia Theater Quad"
+  },
+  "images": {
+    "small": "/drivers/bravia-theater-quad/assets/images/small.png",
+    "large": "/drivers/bravia-theater-quad/assets/images/large.png"
+  },
+  "class": "speaker",
+  "capabilities": [
+    "onoff",
+    "volume_set",
+    "volume_mute",
+    "bravia_input",
+    "bravia_night_mode",
+    "bravia_voice_enhancer",
+    "bravia_sound_field",
+    "bravia_rear_level",
+    "bravia_hdmi_cec",
+    "bravia_auto_standby",
+    "bravia_drc",
+    "bravia_aav",
+    "bravia_hdmi_passthrough"
+  ],
+  "energy": {
+    "usageConstant": 10
+  },
+  "discovery": "bravia-theatre",
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      },
+      "options": {
+        "singular": false
+      }
+    },
+    {
+      "id": "manual_ip",
+      "navigation": {
+        "next": "add_devices",
+        "prev": "list_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Volume Limiter",
+        "nl": "Volumebegrenzer",
+        "de": "Lautstärkebegrenzer",
+        "fr": "Limiteur de volume",
+        "es": "Limitador de volumen"
+      },
+      "children": [
+        {
+          "id": "volume_limit_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Volume Limit Mode",
+            "nl": "Volumebegrenzermodus",
+            "de": "Lautstärke-Begrenzungsmodus",
+            "fr": "Mode de limitation du volume",
+            "es": "Modo de límite de volumen"
+          },
+          "value": "disabled",
+          "values": [
+            {
+              "id": "disabled",
+              "label": {
+                "en": "Disabled",
+                "nl": "Uitgeschakeld",
+                "de": "Deaktiviert",
+                "fr": "Désactivé",
+                "es": "Desactivado"
+              }
+            },
+            {
+              "id": "passive",
+              "label": {
+                "en": "Passive (limit slider range)",
+                "nl": "Passief (schuifbereik beperken)",
+                "de": "Passiv (Schieberegler begrenzen)",
+                "fr": "Passif (limiter la plage du curseur)",
+                "es": "Pasivo (limitar rango del control)"
+              }
+            },
+            {
+              "id": "active",
+              "label": {
+                "en": "Active (enforce + monitor)",
+                "nl": "Actief (afdwingen + bewaken)",
+                "de": "Aktiv (erzwingen + überwachen)",
+                "fr": "Actif (appliquer + surveiller)",
+                "es": "Activo (aplicar + monitorear)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "volume_limit_max",
+          "type": "number",
+          "label": {
+            "en": "Maximum Volume",
+            "nl": "Maximaal volume",
+            "de": "Maximale Lautstärke",
+            "fr": "Volume maximum",
+            "es": "Volumen máximo"
+          },
+          "value": 100,
+          "min": 1,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Advanced",
+        "nl": "Geavanceerd",
+        "de": "Erweitert",
+        "fr": "Avancé",
+        "es": "Avanzado"
+      },
+      "children": [
+        {
+          "id": "startup_volume",
+          "type": "number",
+          "label": {
+            "en": "Startup Volume",
+            "nl": "Opstartvolume",
+            "de": "Startlautstärke",
+            "fr": "Volume de démarrage",
+            "es": "Volumen de inicio"
+          },
+          "hint": {
+            "en": "Volume to set when the device powers on (0 = disabled).",
+            "nl": "Volume bij inschakelen van het apparaat (0 = uitgeschakeld).",
+            "de": "Lautstärke beim Einschalten des Geräts (0 = deaktiviert).",
+            "fr": "Volume à définir lors de la mise en marche (0 = désactivé).",
+            "es": "Volumen al encender el dispositivo (0 = desactivado)."
+          },
+          "value": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "poll_interval",
+          "type": "number",
+          "label": {
+            "en": "Poll Interval (seconds)",
+            "nl": "Pollinginterval (seconden)",
+            "de": "Abfrageintervall (Sekunden)",
+            "fr": "Intervalle d'interrogation (secondes)",
+            "es": "Intervalo de sondeo (segundos)"
+          },
+          "hint": {
+            "en": "Interval for polling DRC and Auto Volume state (they don't send notifications)",
+            "nl": "Interval voor het ophalen van DRC- en auto-volume-status (geen meldingen)",
+            "de": "Intervall für die Abfrage von DRC und Auto-Lautstärke (keine Benachrichtigungen)",
+            "fr": "Intervalle d'interrogation pour le DRC et le volume automatique (sans notifications)",
+            "es": "Intervalo de sondeo para el estado de DRC y volumen automático (sin notificaciones)"
+          },
+          "value": 60,
+          "min": 10,
+          "max": 300,
+          "step": 5
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Info",
+        "nl": "Apparaatinfo",
+        "de": "Geräteinformationen",
+        "fr": "Informations sur l'appareil",
+        "es": "Información del dispositivo"
+      },
+      "children": [
+        {
+          "id": "ip_address",
+          "type": "label",
+          "label": {
+            "en": "IP Address",
+            "nl": "IP-adres",
+            "de": "IP-Adresse",
+            "fr": "Adresse IP",
+            "es": "Dirección IP"
+          },
+          "value": ""
+        },
+        {
+          "id": "has_subwoofer",
+          "type": "label",
+          "label": {
+            "en": "Subwoofer Detected",
+            "nl": "Subwoofer gedetecteerd",
+            "de": "Subwoofer erkannt",
+            "fr": "Caisson de basses détecté",
+            "es": "Subwoofer detectado"
+          },
+          "value": "Unknown"
+        },
+        {
+          "id": "firmware_version",
+          "type": "label",
+          "label": {
+            "en": "Firmware Version",
+            "nl": "Firmwareversie",
+            "de": "Firmware-Version",
+            "fr": "Version du firmware",
+            "es": "Versión de firmware"
+          },
+          "value": "Unknown"
+        },
+        {
+          "id": "network_mode",
+          "type": "label",
+          "label": {
+            "en": "Network Mode",
+            "nl": "Netwerkmodus",
+            "de": "Netzwerkmodus",
+            "fr": "Mode réseau",
+            "es": "Modo de red"
+          },
+          "value": "Unknown"
+        },
+        {
+          "id": "mac_address",
+          "type": "label",
+          "label": {
+            "en": "MAC Address",
+            "nl": "MAC-adres",
+            "de": "MAC-Adresse",
+            "fr": "Adresse MAC",
+            "es": "Dirección MAC"
+          },
+          "value": "Unknown"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Maintenance",
+        "nl": "Onderhoud",
+        "de": "Wartung",
+        "fr": "Maintenance",
+        "es": "Mantenimiento"
+      },
+      "children": [
+        {
+          "id": "run_cisip2_test",
+          "type": "checkbox",
+          "label": {
+            "en": "Run CIS-IP2 Feature Test",
+            "nl": "CIS-IP2 functietest uitvoeren",
+            "de": "CIS-IP2-Funktionstest ausführen",
+            "fr": "Exécuter le test de fonctionnalités CIS-IP2",
+            "es": "Ejecutar prueba de funciones CIS-IP2"
+          },
+          "hint": {
+            "en": "Probes all known CIS-IP2 features via GET and logs results to the Homey app log.",
+            "nl": "Controleert alle bekende CIS-IP2-functies via GET en registreert resultaten in het app-logboek.",
+            "de": "Überprüft alle bekannten CIS-IP2-Funktionen per GET und protokolliert die Ergebnisse im App-Log.",
+            "fr": "Sonde toutes les fonctionnalités CIS-IP2 via GET et enregistre les résultats dans le journal.",
+            "es": "Prueba todas las funciones CIS-IP2 conocidas mediante GET y registra los resultados en el registro."
+          },
+          "value": false
+        }
+      ]
+    }
+  ]
+}

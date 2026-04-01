@@ -1,0 +1,26 @@
+{
+  "type": "mdns-sd",
+  "mdns-sd": {
+    "name": "airplay",
+    "protocol": "tcp"
+  },
+  "id": "{{name}}",
+  "conditions": [
+    [
+      {
+        "field": "txt.manufacturer",
+        "match": {
+          "type": "regex",
+          "value": "sony"
+        }
+      },
+      {
+        "field": "txt.model",
+        "match": {
+          "type": "regex",
+          "value": "bravia theatre"
+        }
+      }
+    ]
+  ]
+}

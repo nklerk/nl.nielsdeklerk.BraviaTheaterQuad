@@ -1,0 +1,27 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Auto Standby",
+    "nl": "Automatische stand-by",
+    "de": "Automatischer Standby",
+    "fr": "Veille automatique",
+    "es": "Modo de espera automático"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": null,
+  "insightsTitleTrue": {
+    "en": "Auto standby turned on",
+    "nl": "Automatische stand-by ingeschakeld",
+    "de": "Automatischer Standby eingeschaltet",
+    "fr": "Veille automatique activée",
+    "es": "Modo de espera automático activado"
+  },
+  "insightsTitleFalse": {
+    "en": "Auto standby turned off",
+    "nl": "Automatische stand-by uitgeschakeld",
+    "de": "Automatischer Standby ausgeschaltet",
+    "fr": "Veille automatique désactivée",
+    "es": "Modo de espera automático desactivado"
+  }
+}

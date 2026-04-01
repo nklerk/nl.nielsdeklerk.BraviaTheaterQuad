@@ -1,0 +1,27 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Night Mode",
+    "nl": "Nachtmodus",
+    "de": "Nachtmodus",
+    "fr": "Mode nuit",
+    "es": "Modo nocturno"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "insightsTitleTrue": {
+    "en": "Night mode turned on",
+    "nl": "Nachtmodus ingeschakeld",
+    "de": "Nachtmodus eingeschaltet",
+    "fr": "Mode nuit activé",
+    "es": "Modo nocturno activado"
+  },
+  "insightsTitleFalse": {
+    "en": "Night mode turned off",
+    "nl": "Nachtmodus uitgeschakeld",
+    "de": "Nachtmodus ausgeschaltet",
+    "fr": "Mode nuit désactivé",
+    "es": "Modo nocturno desactivado"
+  }
+}

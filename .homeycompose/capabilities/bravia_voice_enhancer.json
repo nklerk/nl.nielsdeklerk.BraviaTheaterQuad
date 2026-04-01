@@ -1,0 +1,27 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Voice Enhancer",
+    "nl": "Stemversterker",
+    "de": "Stimmverbesserung",
+    "fr": "Améliorateur vocal",
+    "es": "Mejora de voz"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "insightsTitleTrue": {
+    "en": "Voice enhancer turned on",
+    "nl": "Stemversterker ingeschakeld",
+    "de": "Stimmverbesserung eingeschaltet",
+    "fr": "Améliorateur vocal activé",
+    "es": "Mejora de voz activada"
+  },
+  "insightsTitleFalse": {
+    "en": "Voice enhancer turned off",
+    "nl": "Stemversterker uitgeschakeld",
+    "de": "Stimmverbesserung ausgeschaltet",
+    "fr": "Améliorateur vocal désactivé",
+    "es": "Mejora de voz desactivada"
+  }
+}

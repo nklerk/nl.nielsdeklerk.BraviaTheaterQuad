@@ -1,0 +1,45 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Dynamic Range Compressor",
+    "nl": "Dynamisch bereikcompressor",
+    "de": "Dynamikbereich-Kompressor",
+    "fr": "Compresseur de plage dynamique",
+    "es": "Compresor de rango dinámico"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": null,
+  "values": [
+    {
+      "id": "auto",
+      "title": {
+        "en": "Auto",
+        "nl": "Automatisch",
+        "de": "Automatisch",
+        "fr": "Automatique",
+        "es": "Automático"
+      }
+    },
+    {
+      "id": "on",
+      "title": {
+        "en": "On",
+        "nl": "Aan",
+        "de": "An",
+        "fr": "Activé",
+        "es": "Activado"
+      }
+    },
+    {
+      "id": "off",
+      "title": {
+        "en": "Off",
+        "nl": "Uit",
+        "de": "Aus",
+        "fr": "Désactivé",
+        "es": "Desactivado"
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "drivers": {
+    "bravia-theater-quad": {
+      "pair": {
+        "list_devices": {
+          "title": "Select your Bravia Theater",
+          "subtitle": "Discovered devices on your network"
+        },
+        "manual_ip": {
+          "title": "Manual IP Entry",
+          "description": "Enter the IP address of your Sony Bravia Theater Quad",
+          "ip_label": "IP Address",
+          "ip_placeholder": "e.g. 192.168.1.100"
+        },
+        "view": {
+          "title": "Pairing with Bravia Theater Quad",
+          "description": "Please wait while we are pairing with your Bravia Theater Quad",
+          "success": "Successfully paired with Bravia Theater Quad",
+          "error": "Failed to pair with Bravia Theater Quad",
+          "back_button": "Back to device list"
+        }
+      }
+    }
+  }
+}

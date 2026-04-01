@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 20px;
+      color: #333;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #007AFF;
+      box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.2);
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .btn-primary {
+      background-color: #007AFF;
+      color: white;
+    }
+    .btn-primary:hover {
+      background-color: #0056CC;
+    }
+    .btn-primary:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .error {
+      color: #d32f2f;
+      font-size: 13px;
+      margin-top: 8px;
+      display: none;
+    }
+    .status {
+      font-size: 13px;
+      margin-top: 8px;
+      color: #666;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>Manual IP Entry</h2>
+  <p>If your Bravia Theater Quad was not found automatically, enter its IP address below.</p>
+
+  <div class="form-group">
+    <label for="ip_address">IP Address</label>
+    <input type="text" id="ip_address" placeholder="192.168.1.100" autocomplete="off" />
+  </div>
+
+  <button class="btn btn-primary" id="btn_test" onclick="testConnection()">Test &amp; Add</button>
+
+  <div class="status" id="status">Testing connection...</div>
+  <div class="error" id="error"></div>
+
+  <script>
+    // eslint-disable-next-line no-undef
+    var Homey;
+
+    function testConnection() {
+      var ip = document.getElementById('ip_address').value.trim();
+      if (!ip) {
+        showError('Please enter an IP address');
+        return;
+      }
+
+      // Basic IP validation
+      var ipRegex = /^(\d{1,3}\.){3}\d{1,3}$/;
+      if (!ipRegex.test(ip)) {
+        showError('Please enter a valid IP address (e.g. 192.168.1.100)');
+        return;
+      }
+
+      var btn = document.getElementById('btn_test');
+      btn.disabled = true;
+      hideError();
+      showStatus('Testing connection...');
+
+      Homey.emit('manual_ip_entered', { address: ip })
+        .then(function () {
+          showStatus('Connected! Adding device...');
+          Homey.nextView();
+        })
+        .catch(function (err) {
+          btn.disabled = false;
+          hideStatus();
+          showError(err.message || 'Could not connect to device. Please check the IP address and try again.');
+        });
+    }
+
+    function showError(msg) {
+      var el = document.getElementById('error');
+      el.textContent = msg;
+      el.style.display = 'block';
+    }
+
+    function hideError() {
+      document.getElementById('error').style.display = 'none';
+    }
+
+    function showStatus(msg) {
+      var el = document.getElementById('status');
+      el.textContent = msg;
+      el.style.display = 'block';
+    }
+
+    function hideStatus() {
+      document.getElementById('status').style.display = 'none';
+    }
+
+    // Allow Enter key to submit
+    document.getElementById('ip_address').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        testConnection();
+      }
+    });
+  </script>
+</body>
+</html>

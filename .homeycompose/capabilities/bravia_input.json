@@ -1,0 +1,65 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Input Source",
+    "nl": "Ingangsbron",
+    "de": "Eingangsquelle",
+    "fr": "Source d'entrée",
+    "es": "Fuente de entrada"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "values": [
+    {
+      "id": "tv",
+      "title": {
+        "en": "TV (eARC)",
+        "nl": "TV (eARC)",
+        "de": "TV (eARC)",
+        "fr": "TV (eARC)",
+        "es": "TV (eARC)"
+      }
+    },
+    {
+      "id": "hdmi1",
+      "title": {
+        "en": "HDMI In",
+        "nl": "HDMI-ingang",
+        "de": "HDMI-Eingang",
+        "fr": "Entrée HDMI",
+        "es": "Entrada HDMI"
+      }
+    },
+    {
+      "id": "spotify",
+      "title": {
+        "en": "Spotify",
+        "nl": "Spotify",
+        "de": "Spotify",
+        "fr": "Spotify",
+        "es": "Spotify"
+      }
+    },
+    {
+      "id": "bluetooth",
+      "title": {
+        "en": "Bluetooth",
+        "nl": "Bluetooth",
+        "de": "Bluetooth",
+        "fr": "Bluetooth",
+        "es": "Bluetooth"
+      }
+    },
+    {
+      "id": "airplay2",
+      "title": {
+        "en": "AirPlay",
+        "nl": "AirPlay",
+        "de": "AirPlay",
+        "fr": "AirPlay",
+        "es": "AirPlay"
+      }
+    }
+  ]
+}

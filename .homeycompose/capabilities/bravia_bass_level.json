@@ -1,0 +1,17 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Bass Level",
+    "nl": "Basniveau",
+    "de": "Bass-Pegel",
+    "fr": "Niveau des basses",
+    "es": "Nivel de bajos"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "min": -10,
+  "max": 10,
+  "step": 1,
+  "decimals": 0
+}

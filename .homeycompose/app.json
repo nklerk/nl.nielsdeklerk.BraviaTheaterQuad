@@ -1,0 +1,38 @@
+{
+  "id": "nl.nielsdeklerk.BraviaTheaterQuad",
+  "version": "1.0.0",
+  "compatibility": ">=12.4.0",
+  "sdk": 3,
+  "runtime": "nodejs",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Sony Bravia Theater Quad",
+    "nl": "Sony Bravia Theater Quad",
+    "de": "Sony Bravia Theater Quad",
+    "fr": "Sony Bravia Theater Quad",
+    "es": "Sony Bravia Theater Quad"
+  },
+  "description": {
+    "en": "Your Sony Bravia Theater Quad, fully integrated with Homey.",
+    "nl": "Jouw Sony Bravia Theater Quad, volledig geïntegreerd met Homey.",
+    "de": "Dein Sony Bravia Theater Quad, vollständig in Homey integriert.",
+    "fr": "Votre Sony Bravia Theater Quad, parfaitement intégré à Homey.",
+    "es": "Tu Sony Bravia Theater Quad, completamente integrado con Homey."
+  },
+  "brandColor": "#000000",
+  "category": [
+    "music"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Niels de Klerk",
+    "email": "mail@nielsdeklerk.nl"
+  }
+}

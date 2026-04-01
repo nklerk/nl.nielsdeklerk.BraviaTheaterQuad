@@ -1,0 +1,45 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Bass Level",
+    "nl": "Basniveau",
+    "de": "Bass-Pegel",
+    "fr": "Niveau des basses",
+    "es": "Nivel de bajos"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "values": [
+    {
+      "id": "0",
+      "title": {
+        "en": "MIN",
+        "nl": "MIN",
+        "de": "MIN",
+        "fr": "MIN",
+        "es": "MIN"
+      }
+    },
+    {
+      "id": "1",
+      "title": {
+        "en": "MID",
+        "nl": "MID",
+        "de": "MID",
+        "fr": "MID",
+        "es": "MID"
+      }
+    },
+    {
+      "id": "2",
+      "title": {
+        "en": "MAX",
+        "nl": "MAX",
+        "de": "MAX",
+        "fr": "MAX",
+        "es": "MAX"
+      }
+    }
+  ]
+}

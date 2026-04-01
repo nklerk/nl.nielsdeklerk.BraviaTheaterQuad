@@ -1,0 +1,27 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Auto Volume",
+    "nl": "Automatisch volume",
+    "de": "Automatische Lautstärke",
+    "fr": "Volume automatique",
+    "es": "Volumen automático"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": null,
+  "insightsTitleTrue": {
+    "en": "Auto volume turned on",
+    "nl": "Automatisch volume ingeschakeld",
+    "de": "Automatische Lautstärke eingeschaltet",
+    "fr": "Volume automatique activé",
+    "es": "Volumen automático activado"
+  },
+  "insightsTitleFalse": {
+    "en": "Auto volume turned off",
+    "nl": "Automatisch volume uitgeschakeld",
+    "de": "Automatische Lautstärke ausgeschaltet",
+    "fr": "Volume automatique désactivé",
+    "es": "Volumen automático desactivado"
+  }
+}

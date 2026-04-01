@@ -1,0 +1,27 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "HDMI CEC",
+    "nl": "HDMI CEC",
+    "de": "HDMI CEC",
+    "fr": "HDMI CEC",
+    "es": "HDMI CEC"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": null,
+  "insightsTitleTrue": {
+    "en": "HDMI CEC turned on",
+    "nl": "HDMI CEC ingeschakeld",
+    "de": "HDMI CEC eingeschaltet",
+    "fr": "HDMI CEC activé",
+    "es": "HDMI CEC activado"
+  },
+  "insightsTitleFalse": {
+    "en": "HDMI CEC turned off",
+    "nl": "HDMI CEC uitgeschakeld",
+    "de": "HDMI CEC ausgeschaltet",
+    "fr": "HDMI CEC désactivé",
+    "es": "HDMI CEC desactivado"
+  }
+}

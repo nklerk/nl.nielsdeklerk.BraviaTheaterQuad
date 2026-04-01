@@ -1,0 +1,1282 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "nl.nielsdeklerk.BraviaTheaterQuad",
+  "version": "1.0.0",
+  "compatibility": ">=12.4.0",
+  "sdk": 3,
+  "runtime": "nodejs",
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Sony Bravia Theater Quad",
+    "nl": "Sony Bravia Theater Quad",
+    "de": "Sony Bravia Theater Quad",
+    "fr": "Sony Bravia Theater Quad",
+    "es": "Sony Bravia Theater Quad"
+  },
+  "description": {
+    "en": "Control your Sony Bravia Theater Quad soundbar from Homey",
+    "nl": "Bedien je Sony Bravia Theater Quad soundbar via Homey",
+    "de": "Steuere deine Sony Bravia Theater Quad Soundbar mit Homey",
+    "fr": "Contrôlez votre barre de son Sony Bravia Theater Quad depuis Homey",
+    "es": "Controla tu barra de sonido Sony Bravia Theater Quad desde Homey"
+  },
+  "brandColor": "#000000",
+  "category": [
+    "music"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Niels de Klerk",
+    "email": "mail@nielsdeklerk.nl"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "input_changed",
+        "title": {
+          "en": "Input source changed",
+          "nl": "Ingangsbron gewijzigd",
+          "de": "Eingangsquelle geändert",
+          "fr": "Source d'entrée modifiée",
+          "es": "Fuente de entrada cambiada"
+        },
+        "tokens": [
+          {
+            "name": "input",
+            "type": "string",
+            "title": {
+              "en": "Input",
+              "nl": "Ingang",
+              "de": "Eingang",
+              "fr": "Entrée",
+              "es": "Entrada"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "volume_limit_reached",
+        "title": {
+          "en": "Volume limit was reached",
+          "nl": "Volumelimiet bereikt",
+          "de": "Lautstärkebegrenzung erreicht",
+          "fr": "Limite de volume atteinte",
+          "es": "Se alcanzó el límite de volumen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "input_is",
+        "title": {
+          "en": "Input source is [[input]]",
+          "nl": "Ingangsbron is [[input]]",
+          "de": "Eingangsquelle ist [[input]]",
+          "fr": "La source d'entrée est [[input]]",
+          "es": "La fuente de entrada es [[input]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "input",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "tv",
+                "label": {
+                  "en": "TV (eARC)",
+                  "nl": "TV (eARC)",
+                  "de": "TV (eARC)",
+                  "fr": "TV (eARC)",
+                  "es": "TV (eARC)"
+                }
+              },
+              {
+                "id": "hdmi1",
+                "label": {
+                  "en": "HDMI In",
+                  "nl": "HDMI-ingang",
+                  "de": "HDMI-Eingang",
+                  "fr": "Entrée HDMI",
+                  "es": "Entrada HDMI"
+                }
+              },
+              {
+                "id": "spotify",
+                "label": {
+                  "en": "Spotify",
+                  "nl": "Spotify",
+                  "de": "Spotify",
+                  "fr": "Spotify",
+                  "es": "Spotify"
+                }
+              },
+              {
+                "id": "bluetooth",
+                "label": {
+                  "en": "Bluetooth",
+                  "nl": "Bluetooth",
+                  "de": "Bluetooth",
+                  "fr": "Bluetooth",
+                  "es": "Bluetooth"
+                }
+              },
+              {
+                "id": "airplay2",
+                "label": {
+                  "en": "AirPlay",
+                  "nl": "AirPlay",
+                  "de": "AirPlay",
+                  "fr": "AirPlay",
+                  "es": "AirPlay"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "set_volume_limit_mode",
+        "title": {
+          "en": "Set volume limit mode to...",
+          "nl": "Stel volumebegrenzermodus in op...",
+          "de": "Lautstärke-Begrenzungsmodus einstellen auf...",
+          "fr": "Définir le mode de limitation du volume sur...",
+          "es": "Establecer modo de límite de volumen en..."
+        },
+        "titleFormatted": {
+          "en": "Set volume limit mode to [[mode]]",
+          "nl": "Stel volumebegrenzermodus in op [[mode]]",
+          "de": "Lautstärke-Begrenzungsmodus einstellen auf [[mode]]",
+          "fr": "Définir le mode de limitation du volume sur [[mode]]",
+          "es": "Establecer modo de límite de volumen en [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "disabled",
+                "label": {
+                  "en": "Disabled",
+                  "nl": "Uitgeschakeld",
+                  "de": "Deaktiviert",
+                  "fr": "Désactivé",
+                  "es": "Desactivado"
+                }
+              },
+              {
+                "id": "passive",
+                "label": {
+                  "en": "Passive",
+                  "nl": "Passief",
+                  "de": "Passiv",
+                  "fr": "Passif",
+                  "es": "Pasivo"
+                }
+              },
+              {
+                "id": "active",
+                "label": {
+                  "en": "Active",
+                  "nl": "Actief",
+                  "de": "Aktiv",
+                  "fr": "Actif",
+                  "es": "Activo"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_volume_limit_value",
+        "title": {
+          "en": "Set maximum volume to...",
+          "nl": "Stel maximaal volume in op...",
+          "de": "Maximale Lautstärke einstellen auf...",
+          "fr": "Définir le volume maximum sur...",
+          "es": "Establecer el volumen máximo en..."
+        },
+        "titleFormatted": {
+          "en": "Set maximum volume to [[volume]]",
+          "nl": "Stel maximaal volume in op [[volume]]",
+          "de": "Maximale Lautstärke einstellen auf [[volume]]",
+          "fr": "Définir le volume maximum sur [[volume]]",
+          "es": "Establecer el volumen máximo en [[volume]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "volume",
+            "type": "number",
+            "min": 1,
+            "max": 100,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "volume_up_by",
+        "title": {
+          "en": "Increase volume by...",
+          "nl": "Verhoog volume met...",
+          "de": "Lautstärke erhöhen um...",
+          "fr": "Augmenter le volume de...",
+          "es": "Aumentar volumen en..."
+        },
+        "titleFormatted": {
+          "en": "Increase volume by [[steps]]",
+          "nl": "Verhoog volume met [[steps]]",
+          "de": "Lautstärke erhöhen um [[steps]]",
+          "fr": "Augmenter le volume de [[steps]]",
+          "es": "Aumentar volumen en [[steps]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "steps",
+            "type": "number",
+            "min": 1,
+            "max": 20,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "volume_down_by",
+        "title": {
+          "en": "Decrease volume by...",
+          "nl": "Verlaag volume met...",
+          "de": "Lautstärke verringern um...",
+          "fr": "Réduire le volume de...",
+          "es": "Reducir volumen en..."
+        },
+        "titleFormatted": {
+          "en": "Decrease volume by [[steps]]",
+          "nl": "Verlaag volume met [[steps]]",
+          "de": "Lautstärke verringern um [[steps]]",
+          "fr": "Réduire le volume de [[steps]]",
+          "es": "Reducir volumen en [[steps]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "steps",
+            "type": "number",
+            "min": 1,
+            "max": 20,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "set_input",
+        "title": {
+          "en": "Set input source to...",
+          "nl": "Stel ingangsbron in op...",
+          "de": "Eingangsquelle einstellen auf...",
+          "fr": "Définir la source d'entrée sur...",
+          "es": "Establecer fuente de entrada en..."
+        },
+        "titleFormatted": {
+          "en": "Set input source to [[input]]",
+          "nl": "Stel ingangsbron in op [[input]]",
+          "de": "Eingangsquelle einstellen auf [[input]]",
+          "fr": "Définir la source d'entrée sur [[input]]",
+          "es": "Establecer fuente de entrada en [[input]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "input",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "tv",
+                "label": {
+                  "en": "TV (eARC)",
+                  "nl": "TV (eARC)",
+                  "de": "TV (eARC)",
+                  "fr": "TV (eARC)",
+                  "es": "TV (eARC)"
+                }
+              },
+              {
+                "id": "hdmi1",
+                "label": {
+                  "en": "HDMI In",
+                  "nl": "HDMI-ingang",
+                  "de": "HDMI-Eingang",
+                  "fr": "Entrée HDMI",
+                  "es": "Entrada HDMI"
+                }
+              },
+              {
+                "id": "spotify",
+                "label": {
+                  "en": "Spotify",
+                  "nl": "Spotify",
+                  "de": "Spotify",
+                  "fr": "Spotify",
+                  "es": "Spotify"
+                }
+              },
+              {
+                "id": "bluetooth",
+                "label": {
+                  "en": "Bluetooth",
+                  "nl": "Bluetooth",
+                  "de": "Bluetooth",
+                  "fr": "Bluetooth",
+                  "es": "Bluetooth"
+                }
+              },
+              {
+                "id": "airplay2",
+                "label": {
+                  "en": "AirPlay",
+                  "nl": "AirPlay",
+                  "de": "AirPlay",
+                  "fr": "AirPlay",
+                  "es": "AirPlay"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_drc",
+        "title": {
+          "en": "Set dynamic range compressor to...",
+          "nl": "Stel dynamisch bereikcompressor in op...",
+          "de": "Dynamikbereich-Kompressor einstellen auf...",
+          "fr": "Définir le compresseur de plage dynamique sur...",
+          "es": "Establecer compresor de rango dinámico en..."
+        },
+        "titleFormatted": {
+          "en": "Set dynamic range compressor to [[mode]]",
+          "nl": "Stel dynamisch bereikcompressor in op [[mode]]",
+          "de": "Dynamikbereich-Kompressor einstellen auf [[mode]]",
+          "fr": "Définir le compresseur de plage dynamique sur [[mode]]",
+          "es": "Establecer compresor de rango dinámico en [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Automatisch",
+                  "de": "Automatisch",
+                  "fr": "Automatique",
+                  "es": "Automático"
+                }
+              },
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "nl": "Aan",
+                  "de": "An",
+                  "fr": "Activé",
+                  "es": "Activado"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "de": "Aus",
+                  "fr": "Désactivé",
+                  "es": "Desactivado"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set_hdmi_passthrough",
+        "title": {
+          "en": "Set HDMI passthrough to...",
+          "nl": "Stel HDMI-doorvoer in op...",
+          "de": "HDMI-Durchleitung einstellen auf...",
+          "fr": "Définir le passthrough HDMI sur...",
+          "es": "Establecer HDMI passthrough en..."
+        },
+        "titleFormatted": {
+          "en": "Set HDMI passthrough to [[mode]]",
+          "nl": "Stel HDMI-doorvoer in op [[mode]]",
+          "de": "HDMI-Durchleitung einstellen auf [[mode]]",
+          "fr": "Définir le passthrough HDMI sur [[mode]]",
+          "es": "Establecer HDMI passthrough en [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Automatisch",
+                  "de": "Automatisch",
+                  "fr": "Automatique",
+                  "es": "Automático"
+                }
+              },
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "nl": "Aan",
+                  "de": "An",
+                  "fr": "Activé",
+                  "es": "Activado"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "de": "Aus",
+                  "fr": "Désactivé",
+                  "es": "Desactivado"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Bravia Theater Quad",
+        "nl": "Bravia Theater Quad",
+        "de": "Bravia Theater Quad",
+        "fr": "Bravia Theater Quad",
+        "es": "Bravia Theater Quad"
+      },
+      "images": {
+        "small": "/drivers/bravia-theater-quad/assets/images/small.png",
+        "large": "/drivers/bravia-theater-quad/assets/images/large.png"
+      },
+      "class": "speaker",
+      "capabilities": [
+        "onoff",
+        "volume_set",
+        "volume_mute",
+        "bravia_input",
+        "bravia_night_mode",
+        "bravia_voice_enhancer",
+        "bravia_sound_field",
+        "bravia_rear_level",
+        "bravia_hdmi_cec",
+        "bravia_auto_standby",
+        "bravia_drc",
+        "bravia_aav",
+        "bravia_hdmi_passthrough"
+      ],
+      "energy": {
+        "usageConstant": 10
+      },
+      "discovery": "bravia-theatre",
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": false
+          }
+        },
+        {
+          "id": "manual_ip",
+          "navigation": {
+            "next": "add_devices",
+            "prev": "list_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Volume Limiter",
+            "nl": "Volumebegrenzer",
+            "de": "Lautstärkebegrenzer",
+            "fr": "Limiteur de volume",
+            "es": "Limitador de volumen"
+          },
+          "children": [
+            {
+              "id": "volume_limit_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "Volume Limit Mode",
+                "nl": "Volumebegrenzermodus",
+                "de": "Lautstärke-Begrenzungsmodus",
+                "fr": "Mode de limitation du volume",
+                "es": "Modo de límite de volumen"
+              },
+              "value": "disabled",
+              "values": [
+                {
+                  "id": "disabled",
+                  "label": {
+                    "en": "Disabled",
+                    "nl": "Uitgeschakeld",
+                    "de": "Deaktiviert",
+                    "fr": "Désactivé",
+                    "es": "Desactivado"
+                  }
+                },
+                {
+                  "id": "passive",
+                  "label": {
+                    "en": "Passive (limit slider range)",
+                    "nl": "Passief (schuifbereik beperken)",
+                    "de": "Passiv (Schieberegler begrenzen)",
+                    "fr": "Passif (limiter la plage du curseur)",
+                    "es": "Pasivo (limitar rango del control)"
+                  }
+                },
+                {
+                  "id": "active",
+                  "label": {
+                    "en": "Active (enforce + monitor)",
+                    "nl": "Actief (afdwingen + bewaken)",
+                    "de": "Aktiv (erzwingen + überwachen)",
+                    "fr": "Actif (appliquer + surveiller)",
+                    "es": "Activo (aplicar + monitorear)"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "volume_limit_max",
+              "type": "number",
+              "label": {
+                "en": "Maximum Volume",
+                "nl": "Maximaal volume",
+                "de": "Maximale Lautstärke",
+                "fr": "Volume maximum",
+                "es": "Volumen máximo"
+              },
+              "value": 100,
+              "min": 1,
+              "max": 100,
+              "step": 1
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Advanced",
+            "nl": "Geavanceerd",
+            "de": "Erweitert",
+            "fr": "Avancé",
+            "es": "Avanzado"
+          },
+          "children": [
+            {
+              "id": "startup_volume",
+              "type": "number",
+              "label": {
+                "en": "Startup Volume",
+                "nl": "Opstartvolume",
+                "de": "Startlautstärke",
+                "fr": "Volume de démarrage",
+                "es": "Volumen de inicio"
+              },
+              "hint": {
+                "en": "Volume to set when the device powers on (0 = disabled).",
+                "nl": "Volume bij inschakelen van het apparaat (0 = uitgeschakeld).",
+                "de": "Lautstärke beim Einschalten des Geräts (0 = deaktiviert).",
+                "fr": "Volume à définir lors de la mise en marche (0 = désactivé).",
+                "es": "Volumen al encender el dispositivo (0 = desactivado)."
+              },
+              "value": 0,
+              "min": 0,
+              "max": 100,
+              "step": 1
+            },
+            {
+              "id": "poll_interval",
+              "type": "number",
+              "label": {
+                "en": "Poll Interval (seconds)",
+                "nl": "Pollinginterval (seconden)",
+                "de": "Abfrageintervall (Sekunden)",
+                "fr": "Intervalle d'interrogation (secondes)",
+                "es": "Intervalo de sondeo (segundos)"
+              },
+              "hint": {
+                "en": "Interval for polling DRC and Auto Volume state (they don't send notifications)",
+                "nl": "Interval voor het ophalen van DRC- en auto-volume-status (geen meldingen)",
+                "de": "Intervall für die Abfrage von DRC und Auto-Lautstärke (keine Benachrichtigungen)",
+                "fr": "Intervalle d'interrogation pour le DRC et le volume automatique (sans notifications)",
+                "es": "Intervalo de sondeo para el estado de DRC y volumen automático (sin notificaciones)"
+              },
+              "value": 60,
+              "min": 10,
+              "max": 300,
+              "step": 5
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Info",
+            "nl": "Apparaatinfo",
+            "de": "Geräteinformationen",
+            "fr": "Informations sur l'appareil",
+            "es": "Información del dispositivo"
+          },
+          "children": [
+            {
+              "id": "ip_address",
+              "type": "label",
+              "label": {
+                "en": "IP Address",
+                "nl": "IP-adres",
+                "de": "IP-Adresse",
+                "fr": "Adresse IP",
+                "es": "Dirección IP"
+              },
+              "value": ""
+            },
+            {
+              "id": "has_subwoofer",
+              "type": "label",
+              "label": {
+                "en": "Subwoofer Detected",
+                "nl": "Subwoofer gedetecteerd",
+                "de": "Subwoofer erkannt",
+                "fr": "Caisson de basses détecté",
+                "es": "Subwoofer detectado"
+              },
+              "value": "Unknown"
+            },
+            {
+              "id": "firmware_version",
+              "type": "label",
+              "label": {
+                "en": "Firmware Version",
+                "nl": "Firmwareversie",
+                "de": "Firmware-Version",
+                "fr": "Version du firmware",
+                "es": "Versión de firmware"
+              },
+              "value": "Unknown"
+            },
+            {
+              "id": "network_mode",
+              "type": "label",
+              "label": {
+                "en": "Network Mode",
+                "nl": "Netwerkmodus",
+                "de": "Netzwerkmodus",
+                "fr": "Mode réseau",
+                "es": "Modo de red"
+              },
+              "value": "Unknown"
+            },
+            {
+              "id": "mac_address",
+              "type": "label",
+              "label": {
+                "en": "MAC Address",
+                "nl": "MAC-adres",
+                "de": "MAC-Adresse",
+                "fr": "Adresse MAC",
+                "es": "Dirección MAC"
+              },
+              "value": "Unknown"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Maintenance",
+            "nl": "Onderhoud",
+            "de": "Wartung",
+            "fr": "Maintenance",
+            "es": "Mantenimiento"
+          },
+          "children": [
+            {
+              "id": "run_cisip2_test",
+              "type": "checkbox",
+              "label": {
+                "en": "Run CIS-IP2 Feature Test",
+                "nl": "CIS-IP2 functietest uitvoeren",
+                "de": "CIS-IP2-Funktionstest ausführen",
+                "fr": "Exécuter le test de fonctionnalités CIS-IP2",
+                "es": "Ejecutar prueba de funciones CIS-IP2"
+              },
+              "hint": {
+                "en": "Probes all known CIS-IP2 features via GET and logs results to the Homey app log.",
+                "nl": "Controleert alle bekende CIS-IP2-functies via GET en registreert resultaten in het app-logboek.",
+                "de": "Überprüft alle bekannten CIS-IP2-Funktionen per GET und protokolliert die Ergebnisse im App-Log.",
+                "fr": "Sonde toutes les fonctionnalités CIS-IP2 via GET et enregistre les résultats dans le journal.",
+                "es": "Prueba todas las funciones CIS-IP2 conocidas mediante GET y registra los resultados en el registro."
+              },
+              "value": false
+            }
+          ]
+        }
+      ],
+      "id": "bravia-theater-quad"
+    }
+  ],
+  "capabilities": {
+    "bravia_aav": {
+      "type": "boolean",
+      "title": {
+        "en": "Auto Volume",
+        "nl": "Automatisch volume",
+        "de": "Automatische Lautstärke",
+        "fr": "Volume automatique",
+        "es": "Volumen automático"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": null,
+      "insightsTitleTrue": {
+        "en": "Auto volume turned on",
+        "nl": "Automatisch volume ingeschakeld",
+        "de": "Automatische Lautstärke eingeschaltet",
+        "fr": "Volume automatique activé",
+        "es": "Volumen automático activado"
+      },
+      "insightsTitleFalse": {
+        "en": "Auto volume turned off",
+        "nl": "Automatisch volume uitgeschakeld",
+        "de": "Automatische Lautstärke ausgeschaltet",
+        "fr": "Volume automatique désactivé",
+        "es": "Volumen automático desactivado"
+      }
+    },
+    "bravia_auto_standby": {
+      "type": "boolean",
+      "title": {
+        "en": "Auto Standby",
+        "nl": "Automatische stand-by",
+        "de": "Automatischer Standby",
+        "fr": "Veille automatique",
+        "es": "Modo de espera automático"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": null,
+      "insightsTitleTrue": {
+        "en": "Auto standby turned on",
+        "nl": "Automatische stand-by ingeschakeld",
+        "de": "Automatischer Standby eingeschaltet",
+        "fr": "Veille automatique activée",
+        "es": "Modo de espera automático activado"
+      },
+      "insightsTitleFalse": {
+        "en": "Auto standby turned off",
+        "nl": "Automatische stand-by uitgeschakeld",
+        "de": "Automatischer Standby ausgeschaltet",
+        "fr": "Veille automatique désactivée",
+        "es": "Modo de espera automático desactivado"
+      }
+    },
+    "bravia_bass_level": {
+      "type": "number",
+      "title": {
+        "en": "Bass Level",
+        "nl": "Basniveau",
+        "de": "Bass-Pegel",
+        "fr": "Niveau des basses",
+        "es": "Nivel de bajos"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider",
+      "min": -10,
+      "max": 10,
+      "step": 1,
+      "decimals": 0
+    },
+    "bravia_bass_select": {
+      "type": "enum",
+      "title": {
+        "en": "Bass Level",
+        "nl": "Basniveau",
+        "de": "Bass-Pegel",
+        "fr": "Niveau des basses",
+        "es": "Nivel de bajos"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "MIN",
+            "nl": "MIN",
+            "de": "MIN",
+            "fr": "MIN",
+            "es": "MIN"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "MID",
+            "nl": "MID",
+            "de": "MID",
+            "fr": "MID",
+            "es": "MID"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "MAX",
+            "nl": "MAX",
+            "de": "MAX",
+            "fr": "MAX",
+            "es": "MAX"
+          }
+        }
+      ]
+    },
+    "bravia_bluetooth_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Bluetooth Mode",
+        "nl": "Bluetooth-modus",
+        "de": "Bluetooth-Modus",
+        "fr": "Mode Bluetooth",
+        "es": "Modo Bluetooth"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": null,
+      "values": [
+        {
+          "id": "rx",
+          "title": {
+            "en": "Receiver",
+            "nl": "Ontvanger",
+            "de": "Empfänger",
+            "fr": "Récepteur",
+            "es": "Receptor"
+          }
+        },
+        {
+          "id": "tx",
+          "title": {
+            "en": "Transmitter",
+            "nl": "Zender",
+            "de": "Sender",
+            "fr": "Émetteur",
+            "es": "Transmisor"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "de": "Aus",
+            "fr": "Désactivé",
+            "es": "Desactivado"
+          }
+        }
+      ]
+    },
+    "bravia_drc": {
+      "type": "enum",
+      "title": {
+        "en": "Dynamic Range Compressor",
+        "nl": "Dynamisch bereikcompressor",
+        "de": "Dynamikbereich-Kompressor",
+        "fr": "Compresseur de plage dynamique",
+        "es": "Compresor de rango dinámico"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": null,
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto",
+            "nl": "Automatisch",
+            "de": "Automatisch",
+            "fr": "Automatique",
+            "es": "Automático"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On",
+            "nl": "Aan",
+            "de": "An",
+            "fr": "Activé",
+            "es": "Activado"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "de": "Aus",
+            "fr": "Désactivé",
+            "es": "Desactivado"
+          }
+        }
+      ]
+    },
+    "bravia_hdmi_cec": {
+      "type": "boolean",
+      "title": {
+        "en": "HDMI CEC",
+        "nl": "HDMI CEC",
+        "de": "HDMI CEC",
+        "fr": "HDMI CEC",
+        "es": "HDMI CEC"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": null,
+      "insightsTitleTrue": {
+        "en": "HDMI CEC turned on",
+        "nl": "HDMI CEC ingeschakeld",
+        "de": "HDMI CEC eingeschaltet",
+        "fr": "HDMI CEC activé",
+        "es": "HDMI CEC activado"
+      },
+      "insightsTitleFalse": {
+        "en": "HDMI CEC turned off",
+        "nl": "HDMI CEC uitgeschakeld",
+        "de": "HDMI CEC ausgeschaltet",
+        "fr": "HDMI CEC désactivé",
+        "es": "HDMI CEC desactivado"
+      }
+    },
+    "bravia_hdmi_passthrough": {
+      "type": "enum",
+      "title": {
+        "en": "HDMI Passthrough",
+        "nl": "HDMI-doorvoer",
+        "de": "HDMI-Durchleitung",
+        "fr": "Passthrough HDMI",
+        "es": "HDMI Passthrough"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": null,
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Auto",
+            "nl": "Automatisch",
+            "de": "Automatisch",
+            "fr": "Automatique",
+            "es": "Automático"
+          }
+        },
+        {
+          "id": "on",
+          "title": {
+            "en": "On",
+            "nl": "Aan",
+            "de": "An",
+            "fr": "Activé",
+            "es": "Activado"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off",
+            "nl": "Uit",
+            "de": "Aus",
+            "fr": "Désactivé",
+            "es": "Desactivado"
+          }
+        }
+      ]
+    },
+    "bravia_input": {
+      "type": "enum",
+      "title": {
+        "en": "Input Source",
+        "nl": "Ingangsbron",
+        "de": "Eingangsquelle",
+        "fr": "Source d'entrée",
+        "es": "Fuente de entrada"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "values": [
+        {
+          "id": "tv",
+          "title": {
+            "en": "TV (eARC)",
+            "nl": "TV (eARC)",
+            "de": "TV (eARC)",
+            "fr": "TV (eARC)",
+            "es": "TV (eARC)"
+          }
+        },
+        {
+          "id": "hdmi1",
+          "title": {
+            "en": "HDMI In",
+            "nl": "HDMI-ingang",
+            "de": "HDMI-Eingang",
+            "fr": "Entrée HDMI",
+            "es": "Entrada HDMI"
+          }
+        },
+        {
+          "id": "spotify",
+          "title": {
+            "en": "Spotify",
+            "nl": "Spotify",
+            "de": "Spotify",
+            "fr": "Spotify",
+            "es": "Spotify"
+          }
+        },
+        {
+          "id": "bluetooth",
+          "title": {
+            "en": "Bluetooth",
+            "nl": "Bluetooth",
+            "de": "Bluetooth",
+            "fr": "Bluetooth",
+            "es": "Bluetooth"
+          }
+        },
+        {
+          "id": "airplay2",
+          "title": {
+            "en": "AirPlay",
+            "nl": "AirPlay",
+            "de": "AirPlay",
+            "fr": "AirPlay",
+            "es": "AirPlay"
+          }
+        }
+      ]
+    },
+    "bravia_night_mode": {
+      "type": "boolean",
+      "title": {
+        "en": "Night Mode",
+        "nl": "Nachtmodus",
+        "de": "Nachtmodus",
+        "fr": "Mode nuit",
+        "es": "Modo nocturno"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "insightsTitleTrue": {
+        "en": "Night mode turned on",
+        "nl": "Nachtmodus ingeschakeld",
+        "de": "Nachtmodus eingeschaltet",
+        "fr": "Mode nuit activé",
+        "es": "Modo nocturno activado"
+      },
+      "insightsTitleFalse": {
+        "en": "Night mode turned off",
+        "nl": "Nachtmodus uitgeschakeld",
+        "de": "Nachtmodus ausgeschaltet",
+        "fr": "Mode nuit désactivé",
+        "es": "Modo nocturno desactivado"
+      }
+    },
+    "bravia_rear_level": {
+      "type": "number",
+      "title": {
+        "en": "Rear Level",
+        "nl": "Achterste niveau",
+        "de": "Heck-Pegel",
+        "fr": "Niveau arrière",
+        "es": "Nivel trasero"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider",
+      "min": -10,
+      "max": 10,
+      "step": 1,
+      "decimals": 0
+    },
+    "bravia_sound_field": {
+      "type": "boolean",
+      "title": {
+        "en": "Sound Field",
+        "nl": "Geluidsveld",
+        "de": "Schallfeld",
+        "fr": "Champ sonore",
+        "es": "Campo sonoro"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "insightsTitleTrue": {
+        "en": "Sound field turned on",
+        "nl": "Geluidsveld ingeschakeld",
+        "de": "Schallfeld eingeschaltet",
+        "fr": "Champ sonore activé",
+        "es": "Campo sonoro activado"
+      },
+      "insightsTitleFalse": {
+        "en": "Sound field turned off",
+        "nl": "Geluidsveld uitgeschakeld",
+        "de": "Schallfeld ausgeschaltet",
+        "fr": "Champ sonore désactivé",
+        "es": "Campo sonoro desactivado"
+      }
+    },
+    "bravia_voice_enhancer": {
+      "type": "boolean",
+      "title": {
+        "en": "Voice Enhancer",
+        "nl": "Stemversterker",
+        "de": "Stimmverbesserung",
+        "fr": "Améliorateur vocal",
+        "es": "Mejora de voz"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "insightsTitleTrue": {
+        "en": "Voice enhancer turned on",
+        "nl": "Stemversterker ingeschakeld",
+        "de": "Stimmverbesserung eingeschaltet",
+        "fr": "Améliorateur vocal activé",
+        "es": "Mejora de voz activada"
+      },
+      "insightsTitleFalse": {
+        "en": "Voice enhancer turned off",
+        "nl": "Stemversterker uitgeschakeld",
+        "de": "Stimmverbesserung ausgeschaltet",
+        "fr": "Améliorateur vocal désactivé",
+        "es": "Mejora de voz desactivada"
+      }
+    }
+  },
+  "discovery": {
+    "bravia-theatre": {
+      "type": "mdns-sd",
+      "mdns-sd": {
+        "name": "airplay",
+        "protocol": "tcp"
+      },
+      "id": "{{name}}",
+      "conditions": [
+        [
+          {
+            "field": "txt.manufacturer",
+            "match": {
+              "type": "regex",
+              "value": "sony"
+            }
+          },
+          {
+            "field": "txt.model",
+            "match": {
+              "type": "regex",
+              "value": "bravia theatre"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}
