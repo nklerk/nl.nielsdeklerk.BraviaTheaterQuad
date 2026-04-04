@@ -386,13 +386,6 @@ class BraviaTheaterQuadDevice extends Homey.Device {
       this.log(`Startup volume updated to ${vol === 0 ? 'off' : vol}`);
     }
 
-    if (changedKeys.includes('run_cisip2_test') && newSettings.run_cisip2_test === true) {
-      this.log('CIS-IP2 feature test triggered from settings');
-      this._client.testCisIp2Features().catch((err) => {
-        this.error(`CIS-IP2 feature test error: ${err.message}`);
-      });
-      return { run_cisip2_test: false };
-    }
   }
 
   // --- Discovery ---

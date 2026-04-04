@@ -252,37 +252,6 @@
           "value": "Unknown"
         }
       ]
-    },
-    {
-      "type": "group",
-      "label": {
-        "en": "Maintenance",
-        "nl": "Onderhoud",
-        "de": "Wartung",
-        "fr": "Maintenance",
-        "es": "Mantenimiento"
-      },
-      "children": [
-        {
-          "id": "run_cisip2_test",
-          "type": "checkbox",
-          "label": {
-            "en": "Run CIS-IP2 Feature Test",
-            "nl": "CIS-IP2 functietest uitvoeren",
-            "de": "CIS-IP2-Funktionstest ausführen",
-            "fr": "Exécuter le test de fonctionnalités CIS-IP2",
-            "es": "Ejecutar prueba de funciones CIS-IP2"
-          },
-          "hint": {
-            "en": "Probes all known CIS-IP2 features via GET and logs results to the Homey app log.",
-            "nl": "Controleert alle bekende CIS-IP2-functies via GET en registreert resultaten in het app-logboek.",
-            "de": "Überprüft alle bekannten CIS-IP2-Funktionen per GET und protokolliert die Ergebnisse im App-Log.",
-            "fr": "Sonde toutes les fonctionnalités CIS-IP2 via GET et enregistre les résultats dans le journal.",
-            "es": "Prueba todas las funciones CIS-IP2 conocidas mediante GET y registra los resultados en el registro."
-          },
-          "value": false
-        }
-      ]
     }
   ]
 }
