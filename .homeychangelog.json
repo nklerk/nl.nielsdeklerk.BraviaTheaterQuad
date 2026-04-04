@@ -4,5 +4,8 @@
   },
   "1.0.1": {
     "en": "update app description and add repository links"
+  },
+  "1.0.2": {
+    "en": "Removed CIS-IP2 test feature"
   }
 }
