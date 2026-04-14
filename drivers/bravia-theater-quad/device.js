@@ -68,7 +68,7 @@ class BraviaTheaterQuadDevice extends Homey.Device {
     // Fetch all states
     await this._client.fetchAllStates();
 
-    // Detect subwoofer
+    // Detect optional subwoofer (no sub: bass range 0-2, with sub: bass range -10 to 10)
     const hasSubwoofer = await this._client.detectSubwoofer();
     await this._configureBassCapability(hasSubwoofer);
     await this.setSettings({ has_subwoofer: hasSubwoofer ? 'Yes' : 'No' }).catch(this.error);
@@ -81,6 +81,9 @@ class BraviaTheaterQuadDevice extends Homey.Device {
       mac_address: state.macAddress || 'Unknown',
       startup_volume: state.presetVolStep != null ? state.presetVolStep : 0,
     }).catch(this.error);
+
+    // Apply volume slider limit
+    this._updateVolumeSliderLimit();
 
     // Sync all states to Homey
     await this._syncAllStates();
@@ -315,6 +318,13 @@ class BraviaTheaterQuadDevice extends Homey.Device {
     return this.getSetting('volume_limit_max') || 100;
   }
 
+  _updateVolumeSliderLimit(settings) {
+    const mode = settings ? settings.volume_limit_mode : this._getVolumeLimitMode();
+    const max = settings ? (settings.volume_limit_max || 100) : this._getVolumeLimitMax();
+    const sliderMax = mode !== 'disabled' ? max / 100 : 1;
+    this.setCapabilityOptions('volume_set', { max: sliderMax }).catch(this.error);
+  }
+
   _applyVolumeLimit(volume) {
     const mode = this._getVolumeLimitMode();
     if (mode === 'disabled') return volume;
@@ -372,6 +382,9 @@ class BraviaTheaterQuadDevice extends Homey.Device {
 
     if (changedKeys.includes('volume_limit_mode') || changedKeys.includes('volume_limit_max')) {
       this.log(`Volume limit updated: mode=${newSettings.volume_limit_mode}, max=${newSettings.volume_limit_max}`);
+
+      // Update the slider max to reflect the new limit
+      this._updateVolumeSliderLimit(newSettings);
 
       // If switching to active, immediately check current volume
       if (newSettings.volume_limit_mode === 'active') {

@@ -65,6 +65,36 @@ class BraviaTheaterQuadDriver extends Homey.Driver {
         await args.device.setCapabilityValue('bravia_hdmi_passthrough', args.mode);
       });
 
+    // Voice enhancer on/off
+    this.homey.flow.getActionCard('turn_voice_enhancer_on')
+      .registerRunListener(async (args) => {
+        await args.device.setCapabilityValue('bravia_voice_enhancer', true);
+      });
+    this.homey.flow.getActionCard('turn_voice_enhancer_off')
+      .registerRunListener(async (args) => {
+        await args.device.setCapabilityValue('bravia_voice_enhancer', false);
+      });
+
+    // Sound field on/off
+    this.homey.flow.getActionCard('turn_sound_field_on')
+      .registerRunListener(async (args) => {
+        await args.device.setCapabilityValue('bravia_sound_field', true);
+      });
+    this.homey.flow.getActionCard('turn_sound_field_off')
+      .registerRunListener(async (args) => {
+        await args.device.setCapabilityValue('bravia_sound_field', false);
+      });
+
+    // Night mode on/off
+    this.homey.flow.getActionCard('turn_night_mode_on')
+      .registerRunListener(async (args) => {
+        await args.device.setCapabilityValue('bravia_night_mode', true);
+      });
+    this.homey.flow.getActionCard('turn_night_mode_off')
+      .registerRunListener(async (args) => {
+        await args.device.setCapabilityValue('bravia_night_mode', false);
+      });
+
     // Input is condition
     this.homey.flow.getConditionCard('input_is')
       .registerRunListener(async (args) => {

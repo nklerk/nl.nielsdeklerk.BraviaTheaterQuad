@@ -519,6 +519,108 @@
             ]
           }
         ]
+      },
+      {
+        "id": "turn_voice_enhancer_on",
+        "title": {
+          "en": "Turn on Voice Enhancer",
+          "nl": "Stemversterker inschakelen",
+          "de": "Sprachverbesserung einschalten",
+          "fr": "Activer l'amélioration de la voix",
+          "es": "Activar mejora de voz"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "turn_voice_enhancer_off",
+        "title": {
+          "en": "Turn off Voice Enhancer",
+          "nl": "Stemversterker uitschakelen",
+          "de": "Sprachverbesserung ausschalten",
+          "fr": "Désactiver l'amélioration de la voix",
+          "es": "Desactivar mejora de voz"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "turn_sound_field_on",
+        "title": {
+          "en": "Turn on Sound Field",
+          "nl": "Geluidsveld inschakelen",
+          "de": "Schallfeld einschalten",
+          "fr": "Activer le champ sonore",
+          "es": "Activar campo sonoro"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "turn_sound_field_off",
+        "title": {
+          "en": "Turn off Sound Field",
+          "nl": "Geluidsveld uitschakelen",
+          "de": "Schallfeld ausschalten",
+          "fr": "Désactiver le champ sonore",
+          "es": "Desactivar campo sonoro"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "turn_night_mode_on",
+        "title": {
+          "en": "Turn on Night Mode",
+          "nl": "Nachtmodus inschakelen",
+          "de": "Nachtmodus einschalten",
+          "fr": "Activer le mode nuit",
+          "es": "Activar modo noche"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "turn_night_mode_off",
+        "title": {
+          "en": "Turn off Night Mode",
+          "nl": "Nachtmodus uitschakelen",
+          "de": "Nachtmodus ausschalten",
+          "fr": "Désactiver le mode nuit",
+          "es": "Desactivar modo noche"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
       }
     ]
   },
