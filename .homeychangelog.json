@@ -10,5 +10,8 @@
   },
   "1.0.3": {
     "en": "add flow cards for voice enhancer, sound field, and night mode, update volume slider limit dynamically, and improve subwoofer detection logic."
+  },
+  "1.0.4": {
+    "en": "removed Env file"
   }
 }
