@@ -125,6 +125,13 @@
         "fr": "La source d'entrée est [[input]]",
         "es": "La fuente de entrada es [[input]]"
       },
+      "titleFormatted": {
+        "en": "Input source !{{is|isn't}} [[input]]",
+        "nl": "Ingangsbron !{{is|is niet}} [[input]]",
+        "de": "Eingangsquelle !{{ist|ist nicht}} [[input]]",
+        "fr": "La source d'entrée !{{est|n'est pas}} [[input]]",
+        "es": "La fuente de entrada !{{es|no es}} [[input]]"
+      },
       "args": [
         {
           "name": "input",
@@ -174,6 +181,7 @@
     {
       "id": "drc_is",
       "title": { "en": "DRC mode !{{is|isn't}} [[mode]]", "nl": "DRC-modus !{{is|is niet}} [[mode]]", "de": "DRC-Modus !{{ist|ist nicht}} [[mode]]", "fr": "Le mode DRC !{{est|n'est pas}} [[mode]]", "es": "El modo DRC !{{es|no es}} [[mode]]" },
+      "titleFormatted": { "en": "DRC mode !{{is|isn't}} [[mode]]", "nl": "DRC-modus !{{is|is niet}} [[mode]]", "de": "DRC-Modus !{{ist|ist nicht}} [[mode]]", "fr": "Le mode DRC !{{est|n'est pas}} [[mode]]", "es": "El modo DRC !{{es|no es}} [[mode]]" },
       "args": [
         {
           "name": "mode",
@@ -189,6 +197,7 @@
     {
       "id": "hdmi_passthrough_is",
       "title": { "en": "HDMI passthrough !{{is|isn't}} [[mode]]", "nl": "HDMI-doorvoer !{{is|is niet}} [[mode]]", "de": "HDMI-Durchleitung !{{ist|ist nicht}} [[mode]]", "fr": "Le passthrough HDMI !{{est|n'est pas}} [[mode]]", "es": "HDMI passthrough !{{es|no es}} [[mode]]" },
+      "titleFormatted": { "en": "HDMI passthrough !{{is|isn't}} [[mode]]", "nl": "HDMI-doorvoer !{{is|is niet}} [[mode]]", "de": "HDMI-Durchleitung !{{ist|ist nicht}} [[mode]]", "fr": "Le passthrough HDMI !{{est|n'est pas}} [[mode]]", "es": "HDMI passthrough !{{es|no es}} [[mode]]" },
       "args": [
         {
           "name": "mode",
@@ -204,6 +213,7 @@
     {
       "id": "bluetooth_mode_is",
       "title": { "en": "Bluetooth mode !{{is|isn't}} [[mode]]", "nl": "Bluetooth-modus !{{is|is niet}} [[mode]]", "de": "Bluetooth-Modus !{{ist|ist nicht}} [[mode]]", "fr": "Le mode Bluetooth !{{est|n'est pas}} [[mode]]", "es": "El modo Bluetooth !{{es|no es}} [[mode]]" },
+      "titleFormatted": { "en": "Bluetooth mode !{{is|isn't}} [[mode]]", "nl": "Bluetooth-modus !{{is|is niet}} [[mode]]", "de": "Bluetooth-Modus !{{ist|ist nicht}} [[mode]]", "fr": "Le mode Bluetooth !{{est|n'est pas}} [[mode]]", "es": "El modo Bluetooth !{{es|no es}} [[mode]]" },
       "args": [
         {
           "name": "mode",

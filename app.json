@@ -89,6 +89,394 @@
             "filter": "driver_id=bravia-theater-quad"
           }
         ]
+      },
+      {
+        "id": "power_on",
+        "title": {
+          "en": "Turned on",
+          "nl": "Ingeschakeld",
+          "de": "Eingeschaltet",
+          "fr": "Allumé",
+          "es": "Encendido"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "power_off",
+        "title": {
+          "en": "Turned off",
+          "nl": "Uitgeschakeld",
+          "de": "Ausgeschaltet",
+          "fr": "Éteint",
+          "es": "Apagado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "night_mode_on",
+        "title": {
+          "en": "Night Mode turned on",
+          "nl": "Nachtmodus ingeschakeld",
+          "de": "Nachtmodus eingeschaltet",
+          "fr": "Mode nuit activé",
+          "es": "Modo nocturno activado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "night_mode_off",
+        "title": {
+          "en": "Night Mode turned off",
+          "nl": "Nachtmodus uitgeschakeld",
+          "de": "Nachtmodus ausgeschaltet",
+          "fr": "Mode nuit désactivé",
+          "es": "Modo nocturno desactivado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "voice_enhancer_on",
+        "title": {
+          "en": "Voice Enhancer turned on",
+          "nl": "Stemversterker ingeschakeld",
+          "de": "Sprachverbesserung eingeschaltet",
+          "fr": "Amélioration de la voix activée",
+          "es": "Mejora de voz activada"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "voice_enhancer_off",
+        "title": {
+          "en": "Voice Enhancer turned off",
+          "nl": "Stemversterker uitgeschakeld",
+          "de": "Sprachverbesserung ausgeschaltet",
+          "fr": "Amélioration de la voix désactivée",
+          "es": "Mejora de voz desactivada"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "sound_field_on",
+        "title": {
+          "en": "Sound Field turned on",
+          "nl": "Geluidsveld ingeschakeld",
+          "de": "Schallfeld eingeschaltet",
+          "fr": "Champ sonore activé",
+          "es": "Campo sonoro activado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "sound_field_off",
+        "title": {
+          "en": "Sound Field turned off",
+          "nl": "Geluidsveld uitgeschakeld",
+          "de": "Schallfeld ausgeschaltet",
+          "fr": "Champ sonore désactivé",
+          "es": "Campo sonoro desactivado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "hdmi_cec_on",
+        "title": {
+          "en": "HDMI-CEC turned on",
+          "nl": "HDMI-CEC ingeschakeld",
+          "de": "HDMI-CEC eingeschaltet",
+          "fr": "HDMI-CEC activé",
+          "es": "HDMI-CEC activado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "hdmi_cec_off",
+        "title": {
+          "en": "HDMI-CEC turned off",
+          "nl": "HDMI-CEC uitgeschakeld",
+          "de": "HDMI-CEC ausgeschaltet",
+          "fr": "HDMI-CEC désactivé",
+          "es": "HDMI-CEC desactivado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "auto_standby_on",
+        "title": {
+          "en": "Auto Standby turned on",
+          "nl": "Automatische stand-by ingeschakeld",
+          "de": "Auto-Standby eingeschaltet",
+          "fr": "Veille automatique activée",
+          "es": "Espera automática activada"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "auto_standby_off",
+        "title": {
+          "en": "Auto Standby turned off",
+          "nl": "Automatische stand-by uitgeschakeld",
+          "de": "Auto-Standby ausgeschaltet",
+          "fr": "Veille automatique désactivée",
+          "es": "Espera automática desactivada"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "aav_on",
+        "title": {
+          "en": "Auto Volume turned on",
+          "nl": "Auto-volume ingeschakeld",
+          "de": "Auto-Lautstärke eingeschaltet",
+          "fr": "Volume automatique activé",
+          "es": "Volumen automático activado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "aav_off",
+        "title": {
+          "en": "Auto Volume turned off",
+          "nl": "Auto-volume uitgeschakeld",
+          "de": "Auto-Lautstärke ausgeschaltet",
+          "fr": "Volume automatique désactivé",
+          "es": "Volumen automático desactivado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "drc_changed",
+        "title": {
+          "en": "DRC mode changed",
+          "nl": "DRC-modus gewijzigd",
+          "de": "DRC-Modus geändert",
+          "fr": "Mode DRC modifié",
+          "es": "Modo DRC cambiado"
+        },
+        "tokens": [
+          {
+            "name": "mode",
+            "type": "string",
+            "title": {
+              "en": "Mode",
+              "nl": "Modus",
+              "de": "Modus",
+              "fr": "Mode",
+              "es": "Modo"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "hdmi_passthrough_changed",
+        "title": {
+          "en": "HDMI passthrough changed",
+          "nl": "HDMI-doorvoer gewijzigd",
+          "de": "HDMI-Durchleitung geändert",
+          "fr": "Passthrough HDMI modifié",
+          "es": "HDMI passthrough cambiado"
+        },
+        "tokens": [
+          {
+            "name": "mode",
+            "type": "string",
+            "title": {
+              "en": "Mode",
+              "nl": "Modus",
+              "de": "Modus",
+              "fr": "Mode",
+              "es": "Modo"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "bluetooth_mode_changed",
+        "title": {
+          "en": "Bluetooth mode changed",
+          "nl": "Bluetooth-modus gewijzigd",
+          "de": "Bluetooth-Modus geändert",
+          "fr": "Mode Bluetooth modifié",
+          "es": "Modo Bluetooth cambiado"
+        },
+        "tokens": [
+          {
+            "name": "mode",
+            "type": "string",
+            "title": {
+              "en": "Mode",
+              "nl": "Modus",
+              "de": "Modus",
+              "fr": "Mode",
+              "es": "Modo"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "rear_level_changed",
+        "title": {
+          "en": "Rear level changed",
+          "nl": "Achterniveau gewijzigd",
+          "de": "Heck-Pegel geändert",
+          "fr": "Niveau arrière modifié",
+          "es": "Nivel trasero cambiado"
+        },
+        "tokens": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level",
+              "nl": "Niveau",
+              "de": "Pegel",
+              "fr": "Niveau",
+              "es": "Nivel"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "bass_level_changed",
+        "title": {
+          "en": "Bass level changed",
+          "nl": "Basniveau gewijzigd",
+          "de": "Bass-Pegel geändert",
+          "fr": "Niveau des basses modifié",
+          "es": "Nivel de graves cambiado"
+        },
+        "tokens": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level",
+              "nl": "Niveau",
+              "de": "Pegel",
+              "fr": "Niveau",
+              "es": "Nivel"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
       }
     ],
     "conditions": [
@@ -100,6 +488,13 @@
           "de": "Eingangsquelle ist [[input]]",
           "fr": "La source d'entrée est [[input]]",
           "es": "La fuente de entrada es [[input]]"
+        },
+        "titleFormatted": {
+          "en": "Input source !{{is|isn't}} [[input]]",
+          "nl": "Ingangsbron !{{is|is niet}} [[input]]",
+          "de": "Eingangsquelle !{{ist|ist nicht}} [[input]]",
+          "fr": "La source d'entrée !{{est|n'est pas}} [[input]]",
+          "es": "La fuente de entrada !{{es|no es}} [[input]]"
         },
         "args": [
           {
@@ -159,6 +554,322 @@
                   "de": "AirPlay",
                   "fr": "AirPlay",
                   "es": "AirPlay"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "power_is_on",
+        "title": {
+          "en": "Power !{{is|isn't}} on",
+          "nl": "Stroom !{{is|is niet}} aan",
+          "de": "Strom !{{ist|ist nicht}} an",
+          "fr": "L'alimentation !{{est|n'est pas}} allumée",
+          "es": "La energía !{{está|no está}} encendida"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "is_muted",
+        "title": {
+          "en": "!{{Is|Isn't}} muted",
+          "nl": "!{{Is|Is niet}} gedempt",
+          "de": "!{{Ist|Ist nicht}} stummgeschaltet",
+          "fr": "!{{Est|N'est pas}} en sourdine",
+          "es": "!{{Está|No está}} silenciado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "night_mode_is_on",
+        "title": {
+          "en": "Night Mode !{{is|isn't}} on",
+          "nl": "Nachtmodus !{{is|is niet}} aan",
+          "de": "Nachtmodus !{{ist|ist nicht}} an",
+          "fr": "Le mode nuit !{{est|n'est pas}} activé",
+          "es": "El modo nocturno !{{está|no está}} activado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "voice_enhancer_is_on",
+        "title": {
+          "en": "Voice Enhancer !{{is|isn't}} on",
+          "nl": "Stemversterker !{{is|is niet}} aan",
+          "de": "Sprachverbesserung !{{ist|ist nicht}} an",
+          "fr": "L'amélioration de la voix !{{est|n'est pas}} activée",
+          "es": "La mejora de voz !{{está|no está}} activada"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "sound_field_is_on",
+        "title": {
+          "en": "Sound Field !{{is|isn't}} on",
+          "nl": "Geluidsveld !{{is|is niet}} aan",
+          "de": "Schallfeld !{{ist|ist nicht}} an",
+          "fr": "Le champ sonore !{{est|n'est pas}} activé",
+          "es": "El campo sonoro !{{está|no está}} activado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "hdmi_cec_is_on",
+        "title": {
+          "en": "HDMI-CEC !{{is|isn't}} on",
+          "nl": "HDMI-CEC !{{is|is niet}} aan",
+          "de": "HDMI-CEC !{{ist|ist nicht}} an",
+          "fr": "HDMI-CEC !{{est|n'est pas}} activé",
+          "es": "HDMI-CEC !{{está|no está}} activado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "auto_standby_is_on",
+        "title": {
+          "en": "Auto Standby !{{is|isn't}} on",
+          "nl": "Automatische stand-by !{{is|is niet}} aan",
+          "de": "Auto-Standby !{{ist|ist nicht}} an",
+          "fr": "La veille automatique !{{est|n'est pas}} activée",
+          "es": "La espera automática !{{está|no está}} activada"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "aav_is_on",
+        "title": {
+          "en": "Auto Volume !{{is|isn't}} on",
+          "nl": "Auto-volume !{{is|is niet}} aan",
+          "de": "Auto-Lautstärke !{{ist|ist nicht}} an",
+          "fr": "Le volume automatique !{{est|n'est pas}} activé",
+          "es": "El volumen automático !{{está|no está}} activado"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "drc_is",
+        "title": {
+          "en": "DRC mode !{{is|isn't}} [[mode]]",
+          "nl": "DRC-modus !{{is|is niet}} [[mode]]",
+          "de": "DRC-Modus !{{ist|ist nicht}} [[mode]]",
+          "fr": "Le mode DRC !{{est|n'est pas}} [[mode]]",
+          "es": "El modo DRC !{{es|no es}} [[mode]]"
+        },
+        "titleFormatted": {
+          "en": "DRC mode !{{is|isn't}} [[mode]]",
+          "nl": "DRC-modus !{{is|is niet}} [[mode]]",
+          "de": "DRC-Modus !{{ist|ist nicht}} [[mode]]",
+          "fr": "Le mode DRC !{{est|n'est pas}} [[mode]]",
+          "es": "El modo DRC !{{es|no es}} [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Automatisch",
+                  "de": "Automatisch",
+                  "fr": "Automatique",
+                  "es": "Automático"
+                }
+              },
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "nl": "Aan",
+                  "de": "An",
+                  "fr": "Activé",
+                  "es": "Activado"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "de": "Aus",
+                  "fr": "Désactivé",
+                  "es": "Desactivado"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hdmi_passthrough_is",
+        "title": {
+          "en": "HDMI passthrough !{{is|isn't}} [[mode]]",
+          "nl": "HDMI-doorvoer !{{is|is niet}} [[mode]]",
+          "de": "HDMI-Durchleitung !{{ist|ist nicht}} [[mode]]",
+          "fr": "Le passthrough HDMI !{{est|n'est pas}} [[mode]]",
+          "es": "HDMI passthrough !{{es|no es}} [[mode]]"
+        },
+        "titleFormatted": {
+          "en": "HDMI passthrough !{{is|isn't}} [[mode]]",
+          "nl": "HDMI-doorvoer !{{is|is niet}} [[mode]]",
+          "de": "HDMI-Durchleitung !{{ist|ist nicht}} [[mode]]",
+          "fr": "Le passthrough HDMI !{{est|n'est pas}} [[mode]]",
+          "es": "HDMI passthrough !{{es|no es}} [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "nl": "Automatisch",
+                  "de": "Automatisch",
+                  "fr": "Automatique",
+                  "es": "Automático"
+                }
+              },
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "nl": "Aan",
+                  "de": "An",
+                  "fr": "Activé",
+                  "es": "Activado"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "de": "Aus",
+                  "fr": "Désactivé",
+                  "es": "Desactivado"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bluetooth_mode_is",
+        "title": {
+          "en": "Bluetooth mode !{{is|isn't}} [[mode]]",
+          "nl": "Bluetooth-modus !{{is|is niet}} [[mode]]",
+          "de": "Bluetooth-Modus !{{ist|ist nicht}} [[mode]]",
+          "fr": "Le mode Bluetooth !{{est|n'est pas}} [[mode]]",
+          "es": "El modo Bluetooth !{{es|no es}} [[mode]]"
+        },
+        "titleFormatted": {
+          "en": "Bluetooth mode !{{is|isn't}} [[mode]]",
+          "nl": "Bluetooth-modus !{{is|is niet}} [[mode]]",
+          "de": "Bluetooth-Modus !{{ist|ist nicht}} [[mode]]",
+          "fr": "Le mode Bluetooth !{{est|n'est pas}} [[mode]]",
+          "es": "El modo Bluetooth !{{es|no es}} [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "rx",
+                "label": {
+                  "en": "Receiver",
+                  "nl": "Ontvanger",
+                  "de": "Empfänger",
+                  "fr": "Récepteur",
+                  "es": "Receptor"
+                }
+              },
+              {
+                "id": "tx",
+                "label": {
+                  "en": "Transmitter",
+                  "nl": "Zender",
+                  "de": "Sender",
+                  "fr": "Émetteur",
+                  "es": "Transmisor"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "de": "Aus",
+                  "fr": "Désactivé",
+                  "es": "Desactivado"
                 }
               }
             ]
@@ -619,6 +1330,230 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "turn_hdmi_cec_on",
+        "title": {
+          "en": "Turn on HDMI-CEC",
+          "nl": "HDMI-CEC inschakelen",
+          "de": "HDMI-CEC einschalten",
+          "fr": "Activer HDMI-CEC",
+          "es": "Activar HDMI-CEC"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "turn_hdmi_cec_off",
+        "title": {
+          "en": "Turn off HDMI-CEC",
+          "nl": "HDMI-CEC uitschakelen",
+          "de": "HDMI-CEC ausschalten",
+          "fr": "Désactiver HDMI-CEC",
+          "es": "Desactivar HDMI-CEC"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "turn_auto_standby_on",
+        "title": {
+          "en": "Turn on Auto Standby",
+          "nl": "Automatische stand-by inschakelen",
+          "de": "Auto-Standby einschalten",
+          "fr": "Activer la veille automatique",
+          "es": "Activar espera automática"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "turn_auto_standby_off",
+        "title": {
+          "en": "Turn off Auto Standby",
+          "nl": "Automatische stand-by uitschakelen",
+          "de": "Auto-Standby ausschalten",
+          "fr": "Désactiver la veille automatique",
+          "es": "Desactivar espera automática"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "turn_aav_on",
+        "title": {
+          "en": "Turn on Auto Volume",
+          "nl": "Auto-volume inschakelen",
+          "de": "Auto-Lautstärke einschalten",
+          "fr": "Activer le volume automatique",
+          "es": "Activar volumen automático"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "turn_aav_off",
+        "title": {
+          "en": "Turn off Auto Volume",
+          "nl": "Auto-volume uitschakelen",
+          "de": "Auto-Lautstärke ausschalten",
+          "fr": "Désactiver le volume automatique",
+          "es": "Desactivar volumen automático"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          }
+        ]
+      },
+      {
+        "id": "set_rear_level",
+        "title": {
+          "en": "Set rear level to...",
+          "nl": "Stel achterniveau in op...",
+          "de": "Heck-Pegel einstellen auf...",
+          "fr": "Définir le niveau arrière sur...",
+          "es": "Establecer nivel trasero en..."
+        },
+        "titleFormatted": {
+          "en": "Set rear level to [[level]]",
+          "nl": "Stel achterniveau in op [[level]]",
+          "de": "Heck-Pegel einstellen auf [[level]]",
+          "fr": "Définir le niveau arrière sur [[level]]",
+          "es": "Establecer nivel trasero en [[level]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "min": -10,
+            "max": 10,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "set_bass_level",
+        "title": {
+          "en": "Set bass level to...",
+          "nl": "Stel basniveau in op...",
+          "de": "Bass-Pegel einstellen auf...",
+          "fr": "Définir le niveau des basses sur...",
+          "es": "Establecer nivel de graves en..."
+        },
+        "titleFormatted": {
+          "en": "Set bass level to [[level]]",
+          "nl": "Stel basniveau in op [[level]]",
+          "de": "Bass-Pegel einstellen auf [[level]]",
+          "fr": "Définir le niveau des basses sur [[level]]",
+          "es": "Establecer nivel de graves en [[level]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "min": -10,
+            "max": 10,
+            "step": 1
+          }
+        ]
+      },
+      {
+        "id": "set_bluetooth_mode",
+        "title": {
+          "en": "Set Bluetooth mode to...",
+          "nl": "Stel Bluetooth-modus in op...",
+          "de": "Bluetooth-Modus einstellen auf...",
+          "fr": "Définir le mode Bluetooth sur...",
+          "es": "Establecer modo Bluetooth en..."
+        },
+        "titleFormatted": {
+          "en": "Set Bluetooth mode to [[mode]]",
+          "nl": "Stel Bluetooth-modus in op [[mode]]",
+          "de": "Bluetooth-Modus einstellen auf [[mode]]",
+          "fr": "Définir le mode Bluetooth sur [[mode]]",
+          "es": "Establecer modo Bluetooth en [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=bravia-theater-quad"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "rx",
+                "label": {
+                  "en": "Receiver",
+                  "nl": "Ontvanger",
+                  "de": "Empfänger",
+                  "fr": "Récepteur",
+                  "es": "Receptor"
+                }
+              },
+              {
+                "id": "tx",
+                "label": {
+                  "en": "Transmitter",
+                  "nl": "Zender",
+                  "de": "Sender",
+                  "fr": "Émetteur",
+                  "es": "Transmisor"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "nl": "Uit",
+                  "de": "Aus",
+                  "fr": "Désactivé",
+                  "es": "Desactivado"
+                }
+              }
+            ]
           }
         ]
       }
