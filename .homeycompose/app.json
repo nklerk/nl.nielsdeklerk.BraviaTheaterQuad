@@ -1,6 +1,6 @@
 {
   "id": "nl.nielsdeklerk.BraviaTheaterQuad",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "compatibility": ">=12.4.0",
   "sdk": 3,
   "runtime": "nodejs",
@@ -8,18 +8,18 @@
     "local"
   ],
   "name": {
-    "en": "Sony Bravia Theater Quad",
-    "nl": "Sony Bravia Theater Quad",
-    "de": "Sony Bravia Theater Quad",
-    "fr": "Sony Bravia Theater Quad",
-    "es": "Sony Bravia Theater Quad"
+    "en": "Bravia Theater Quad",
+    "nl": "Bravia Theater Quad",
+    "de": "Bravia Theater Quad",
+    "fr": "Bravia Theater Quad",
+    "es": "Bravia Theater Quad"
   },
   "description": {
-    "en": "Your Sony Bravia Theater Quad — now smarter and fully integrated with Homey.",
-    "nl": "Jouw Sony Bravia Theater Quad — nu slimmer en volledig geïntegreerd met Homey.",
-    "de": "Dein Sony Bravia Theater Quad — jetzt smarter und vollständig in Homey integriert.",
-    "fr": "Votre Sony Bravia Theater Quad — plus intelligent et parfaitement intégré à Homey.",
-    "es": "Tu Sony Bravia Theater Quad — ahora más inteligente y completamente integrado con Homey."
+    "en": "Cinema sound, perfectly at home.",
+    "nl": "Bioscoopgeluid, perfect thuis.",
+    "de": "Kinoklang, ganz zuhause.",
+    "fr": "Le son du cinéma, parfaitement chez vous.",
+    "es": "Sonido de cine, perfectamente en casa."
   },
   "brandColor": "#000000",
   "category": [

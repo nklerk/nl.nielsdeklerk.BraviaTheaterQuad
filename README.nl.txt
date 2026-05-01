@@ -1,3 +1,3 @@
-Neem volledige controle over je Sony Bravia Theater Quad (HT-A9M2) draadloos luidsprekersysteem vanuit Homey. Beheer stroom, volume, ingangsbronnen, Nachtmodus, Stemversterker, DRC, HDMI-doorvoer en meer — allemaal op één plek.
+Breng je thuisbioscoop tot leven. De Bravia Theater Quad (HT-A9M2) levert ruimtevullend, objectgebaseerd surround-geluid — en luistert nu ook naar Homey. Dim de lampen, wissel van ingang, en laat de film het overnemen.
 
-Automatiseer je thuisbioscoopervaring met krachtige flow-kaarten. Wissel van ingang wanneer een film begint, verlaag het volume voor het slapengaan of activeer de Nachtmodus automatisch. Je Theater Quad verbindt rechtstreeks via je lokale netwerk — geen cloud, geen vertragingen.
+Alles loopt rechtstreeks via je lokale netwerk, dus reacties voelen direct en er verlaat niets je huis. Eén keer koppelen, voor altijd automatiseren.

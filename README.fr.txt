@@ -1,3 +1,3 @@
-Prenez le contrôle total de votre système d'enceintes sans fil Sony Bravia Theater Quad (HT-A9M2) directement depuis Homey. Gérez l'alimentation, le volume, les sources d'entrée, le Mode Nuit, l'Amplificateur vocal, le DRC, le pass-through HDMI et bien plus — le tout depuis un seul endroit.
+Donnez vie à votre home cinéma. Le Bravia Theater Quad (HT-A9M2) offre un son surround immersif et basé sur les objets — et écoute désormais Homey aussi. Tamisez les lumières, changez d'entrée, et laissez le film prendre le relais.
 
-Automatisez votre expérience home cinéma avec de puissantes cartes de flow. Changez d'entrée quand un film démarre, baissez le volume avant de dormir ou activez le Mode Nuit automatiquement. Votre Theater Quad se connecte directement via votre réseau local — pas de cloud, pas de délais.
+Tout passe directement par votre réseau local, les réactions sont immédiates et rien ne quitte votre domicile. Appairez une fois, automatisez pour toujours.

@@ -1,17 +1,20 @@
 {
   "1.0.0": {
-    "en": "First version!"
+    "en": "First release."
   },
   "1.0.1": {
-    "en": "update app description and add repository links"
+    "en": "Updated the app description and added repository links."
   },
   "1.0.2": {
-    "en": "Removed CIS-IP2 test feature"
+    "en": "Removed the CIS-IP2 test feature."
   },
   "1.0.3": {
-    "en": "add flow cards for voice enhancer, sound field, and night mode, update volume slider limit dynamically, and improve subwoofer detection logic."
+    "en": "Added flow cards for Voice Enhancer, Sound Field and Night Mode. The volume slider now updates dynamically, and subwoofer detection is more reliable."
   },
   "1.0.4": {
-    "en": "removed Env file"
+    "en": "Internal cleanup."
+  },
+  "1.1.0": {
+    "en": "Flow cards for every capability: triggers for power, modes and levels; conditions for the current state; actions for HDMI-CEC, Auto Standby, Auto Volume, Bluetooth mode, rear level and bass level. Legacy actions now reliably push changes to the device, and the device no longer drops offline due to a discovery race."
   }
 }
