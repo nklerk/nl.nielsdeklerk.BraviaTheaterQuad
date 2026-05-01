@@ -1,4 +1,7 @@
 {
+  "errors": {
+    "external_control_disabled": "Externe bediening is uitgeschakeld. Schakel dit in via de Sony Bravia-app om het apparaat te bedienen."
+  },
   "drivers": {
     "bravia-theater-quad": {
       "pair": {

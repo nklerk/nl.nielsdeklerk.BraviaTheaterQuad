@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 20px;
+      color: #333;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+    .intro {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .steps {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+    }
+    .steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background-color: #007AFF;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .step-text {
+      padding-top: 3px;
+      line-height: 1.5;
+    }
+    .step-text strong {
+      color: #111;
+    }
+    .notice {
+      background-color: #FFF8E1;
+      border-left: 3px solid #FFA000;
+      border-radius: 4px;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 24px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .btn-primary {
+      background-color: #007AFF;
+      color: white;
+    }
+    .btn-primary:hover {
+      background-color: #0056CC;
+    }
+  </style>
+</head>
+<body>
+  <h2>Before you begin</h2>
+  <p class="intro">This app requires <strong>External Control</strong> to be enabled on your Bravia Theater Quad. Please follow these steps first:</p>
+
+  <ol class="steps">
+    <li>
+      <span class="step-num">1</span>
+      <span class="step-text">Open the <strong>Bravia Connect</strong> app on your phone</span>
+    </li>
+    <li>
+      <span class="step-num">2</span>
+      <span class="step-text">Select your <strong>Bravia Theater Quad</strong></span>
+    </li>
+    <li>
+      <span class="step-num">3</span>
+      <span class="step-text">Go to <strong>Settings → Network Settings</strong></span>
+    </li>
+    <li>
+      <span class="step-num">4</span>
+      <span class="step-text">Enable <strong>External Control</strong></span>
+    </li>
+  </ol>
+
+  <div class="notice">
+    Without External Control enabled, the app cannot read or change any settings on your device.
+  </div>
+
+  <button class="btn btn-primary" onclick="proceed()">Continue</button>
+
+  <script>
+    // eslint-disable-next-line no-undef
+    var Homey;
+
+    function proceed() {
+      Homey.nextView();
+    }
+  </script>
+</body>
+</html>

@@ -68,6 +68,18 @@ class BraviaTheaterQuadDevice extends Homey.Device {
     // Fetch all states
     await this._client.fetchAllStates();
 
+    // Detect External Control disabled: all get commands return 'ERR'
+    if (this._client.state.power === 'ERR') {
+      const msg = this.homey.__('errors.external_control_disabled');
+      this.log('External Control is disabled, marking device unavailable');
+      this.setUnavailable(msg).catch(this.error);
+      this._startExternalControlRecovery();
+      return;
+    }
+
+    // Clear any running recovery loop now that initialization succeeded
+    this._stopExternalControlRecovery();
+
     // Detect optional subwoofer (no sub: bass range 0-2, with sub: bass range -10 to 10)
     const hasSubwoofer = await this._client.detectSubwoofer();
     await this._configureBassCapability(hasSubwoofer);
@@ -89,6 +101,32 @@ class BraviaTheaterQuadDevice extends Homey.Device {
     await this._syncAllStates();
 
     this.setAvailable().catch(this.error);
+  }
+
+  // --- External Control recovery ---
+
+  _startExternalControlRecovery() {
+    if (this._recoveryTimer) return;
+    this.log('Starting External Control recovery polling (every 30s)');
+    this._recoveryTimer = setInterval(async () => {
+      try {
+        const power = await this._client.getPower();
+        if (power !== 'ERR') {
+          this._stopExternalControlRecovery();
+          this.log('External Control re-enabled, reinitializing device');
+          await this._initializeDevice();
+        }
+      } catch (err) {
+        // Still unreachable or ERR — keep waiting
+      }
+    }, 30000);
+  }
+
+  _stopExternalControlRecovery() {
+    if (this._recoveryTimer) {
+      clearInterval(this._recoveryTimer);
+      this._recoveryTimer = null;
+    }
   }
 
   // --- Bass capability configuration ---
@@ -443,6 +481,7 @@ class BraviaTheaterQuadDevice extends Homey.Device {
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+    this._stopExternalControlRecovery();
     if (this._client) {
       this._client.destroy();
       this._client = null;
@@ -450,6 +489,7 @@ class BraviaTheaterQuadDevice extends Homey.Device {
   }
 
   async onUninit() {
+    this._stopExternalControlRecovery();
     if (this._client) {
       this._client.destroy();
       this._client = null;

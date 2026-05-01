@@ -32,10 +32,17 @@
   "discovery": "bravia-theatre",
   "pair": [
     {
+      "id": "prepare",
+      "navigation": {
+        "next": "list_devices"
+      }
+    },
+    {
       "id": "list_devices",
       "template": "list_devices",
       "navigation": {
-        "next": "add_devices"
+        "next": "add_devices",
+        "prev": "prepare"
       },
       "options": {
         "singular": false
