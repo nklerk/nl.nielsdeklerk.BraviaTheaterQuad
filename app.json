@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "nl.nielsdeklerk.BraviaTheaterQuad",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "compatibility": ">=12.4.0",
   "sdk": 3,
   "runtime": "nodejs",
@@ -45,6 +45,13 @@
     "triggers": [
       {
         "id": "input_changed",
+        "hint": {
+          "en": "Fires when the active source switches, for example from TV to Spotify or Bluetooth.",
+          "nl": "Wordt geactiveerd wanneer de actieve bron wisselt, bijvoorbeeld van TV naar Spotify of Bluetooth.",
+          "de": "Wird ausgelöst, wenn die aktive Quelle wechselt, zum Beispiel von TV zu Spotify oder Bluetooth.",
+          "fr": "Se déclenche lorsque la source active change, par exemple de la TV à Spotify ou Bluetooth.",
+          "es": "Se activa cuando cambia la fuente activa, por ejemplo de TV a Spotify o Bluetooth."
+        },
         "title": {
           "en": "Input source changed",
           "nl": "Ingangsbron gewijzigd",
@@ -75,6 +82,13 @@
       },
       {
         "id": "volume_limit_reached",
+        "hint": {
+          "en": "Fires when someone tries to turn the volume above the configured maximum.",
+          "nl": "Wordt geactiveerd wanneer iemand probeert het volume boven het ingestelde maximum te zetten.",
+          "de": "Wird ausgelöst, wenn jemand versucht, die Lautstärke über das eingestellte Maximum zu erhöhen.",
+          "fr": "Se déclenche lorsque quelqu'un essaie de monter le volume au-dessus du maximum configuré.",
+          "es": "Se activa cuando alguien intenta subir el volumen por encima del máximo configurado."
+        },
         "title": {
           "en": "Volume limit was reached",
           "nl": "Volumelimiet bereikt",
@@ -92,6 +106,13 @@
       },
       {
         "id": "power_on",
+        "hint": {
+          "en": "Fires when the soundbar turns on, for example by remote or TV.",
+          "nl": "Wordt geactiveerd wanneer de soundbar aangaat, bijvoorbeeld via afstandsbediening of TV.",
+          "de": "Wird ausgelöst, wenn sich die Soundbar einschaltet, zum Beispiel durch Fernbedienung oder TV.",
+          "fr": "Se déclenche lorsque la barre de son s'allume, par exemple via la télécommande ou la TV.",
+          "es": "Se activa cuando la barra de sonido se enciende, por ejemplo con el mando o la TV."
+        },
         "title": {
           "en": "Turned on",
           "nl": "Ingeschakeld",
@@ -109,6 +130,13 @@
       },
       {
         "id": "power_off",
+        "hint": {
+          "en": "Fires when the soundbar turns off.",
+          "nl": "Wordt geactiveerd wanneer de soundbar uitgaat.",
+          "de": "Wird ausgelöst, wenn sich die Soundbar ausschaltet.",
+          "fr": "Se déclenche lorsque la barre de son s'éteint.",
+          "es": "Se activa cuando la barra de sonido se apaga."
+        },
         "title": {
           "en": "Turned off",
           "nl": "Uitgeschakeld",
@@ -126,6 +154,13 @@
       },
       {
         "id": "night_mode_on",
+        "hint": {
+          "en": "Fires when quieter night-time sound is activated.",
+          "nl": "Wordt geactiveerd wanneer rustiger nachtgeluid wordt ingeschakeld.",
+          "de": "Wird ausgelöst, wenn der leisere Nachtklang aktiviert wird.",
+          "fr": "Se déclenche lorsque le son plus discret pour la nuit est activé.",
+          "es": "Se activa cuando se activa el sonido más silencioso para la noche."
+        },
         "title": {
           "en": "Night Mode turned on",
           "nl": "Nachtmodus ingeschakeld",
@@ -143,6 +178,13 @@
       },
       {
         "id": "night_mode_off",
+        "hint": {
+          "en": "Fires when quieter night-time sound is deactivated.",
+          "nl": "Wordt geactiveerd wanneer rustiger nachtgeluid wordt uitgeschakeld.",
+          "de": "Wird ausgelöst, wenn der leisere Nachtklang deaktiviert wird.",
+          "fr": "Se déclenche lorsque le son plus discret pour la nuit est désactivé.",
+          "es": "Se activa cuando se desactiva el sonido más silencioso para la noche."
+        },
         "title": {
           "en": "Night Mode turned off",
           "nl": "Nachtmodus uitgeschakeld",
@@ -160,6 +202,13 @@
       },
       {
         "id": "voice_enhancer_on",
+        "hint": {
+          "en": "Fires when dialogue boosting is switched on.",
+          "nl": "Wordt geactiveerd wanneer dialoogversterking wordt ingeschakeld.",
+          "de": "Wird ausgelöst, wenn die Dialogverstärkung eingeschaltet wird.",
+          "fr": "Se déclenche lorsque l'amplification des dialogues est activée.",
+          "es": "Se activa cuando se enciende el refuerzo de diálogos."
+        },
         "title": {
           "en": "Voice Enhancer turned on",
           "nl": "Stemversterker ingeschakeld",
@@ -177,6 +226,13 @@
       },
       {
         "id": "voice_enhancer_off",
+        "hint": {
+          "en": "Fires when dialogue boosting is switched off.",
+          "nl": "Wordt geactiveerd wanneer dialoogversterking wordt uitgeschakeld.",
+          "de": "Wird ausgelöst, wenn die Dialogverstärkung ausgeschaltet wird.",
+          "fr": "Se déclenche lorsque l'amplification des dialogues est désactivée.",
+          "es": "Se activa cuando se apaga el refuerzo de diálogos."
+        },
         "title": {
           "en": "Voice Enhancer turned off",
           "nl": "Stemversterker uitgeschakeld",
@@ -194,6 +250,13 @@
       },
       {
         "id": "sound_field_on",
+        "hint": {
+          "en": "Fires when the wider, more cinematic surround effect is switched on.",
+          "nl": "Wordt geactiveerd wanneer het bredere, bioscoopachtige surround-effect wordt ingeschakeld.",
+          "de": "Wird ausgelöst, wenn der breitere, kinoartige Surround-Effekt eingeschaltet wird.",
+          "fr": "Se déclenche lorsque l'effet surround plus large et cinématographique est activé.",
+          "es": "Se activa cuando se enciende el efecto envolvente más amplio y cinematográfico."
+        },
         "title": {
           "en": "Sound Field turned on",
           "nl": "Geluidsveld ingeschakeld",
@@ -211,6 +274,13 @@
       },
       {
         "id": "sound_field_off",
+        "hint": {
+          "en": "Fires when the wider surround effect is switched off.",
+          "nl": "Wordt geactiveerd wanneer het bredere surround-effect wordt uitgeschakeld.",
+          "de": "Wird ausgelöst, wenn der breitere Surround-Effekt ausgeschaltet wird.",
+          "fr": "Se déclenche lorsque l'effet surround plus large est désactivé.",
+          "es": "Se activa cuando se apaga el efecto envolvente más amplio."
+        },
         "title": {
           "en": "Sound Field turned off",
           "nl": "Geluidsveld uitgeschakeld",
@@ -228,6 +298,13 @@
       },
       {
         "id": "hdmi_cec_on",
+        "hint": {
+          "en": "Fires when TV-remote control of the soundbar is enabled.",
+          "nl": "Wordt geactiveerd wanneer bediening van de soundbar via de TV-afstandsbediening wordt ingeschakeld.",
+          "de": "Wird ausgelöst, wenn die Steuerung der Soundbar per TV-Fernbedienung aktiviert wird.",
+          "fr": "Se déclenche lorsque la commande de la barre de son via la télécommande TV est activée.",
+          "es": "Se activa cuando se habilita el control de la barra de sonido con el mando de la TV."
+        },
         "title": {
           "en": "HDMI-CEC turned on",
           "nl": "HDMI-CEC ingeschakeld",
@@ -245,6 +322,13 @@
       },
       {
         "id": "hdmi_cec_off",
+        "hint": {
+          "en": "Fires when TV-remote control of the soundbar is disabled.",
+          "nl": "Wordt geactiveerd wanneer bediening van de soundbar via de TV-afstandsbediening wordt uitgeschakeld.",
+          "de": "Wird ausgelöst, wenn die Steuerung der Soundbar per TV-Fernbedienung deaktiviert wird.",
+          "fr": "Se déclenche lorsque la commande de la barre de son via la télécommande TV est désactivée.",
+          "es": "Se activa cuando se deshabilita el control de la barra de sonido con el mando de la TV."
+        },
         "title": {
           "en": "HDMI-CEC turned off",
           "nl": "HDMI-CEC uitgeschakeld",
@@ -262,6 +346,13 @@
       },
       {
         "id": "auto_standby_on",
+        "hint": {
+          "en": "Fires when automatic power-off after inactivity is enabled.",
+          "nl": "Wordt geactiveerd wanneer automatisch uitschakelen bij inactiviteit wordt ingeschakeld.",
+          "de": "Wird ausgelöst, wenn das automatische Ausschalten bei Inaktivität aktiviert wird.",
+          "fr": "Se déclenche lorsque l'extinction automatique après inactivité est activée.",
+          "es": "Se activa cuando se habilita el apagado automático tras inactividad."
+        },
         "title": {
           "en": "Auto Standby turned on",
           "nl": "Automatische stand-by ingeschakeld",
@@ -279,6 +370,13 @@
       },
       {
         "id": "auto_standby_off",
+        "hint": {
+          "en": "Fires when automatic power-off after inactivity is disabled.",
+          "nl": "Wordt geactiveerd wanneer automatisch uitschakelen bij inactiviteit wordt uitgeschakeld.",
+          "de": "Wird ausgelöst, wenn das automatische Ausschalten bei Inaktivität deaktiviert wird.",
+          "fr": "Se déclenche lorsque l'extinction automatique après inactivité est désactivée.",
+          "es": "Se activa cuando se deshabilita el apagado automático tras inactividad."
+        },
         "title": {
           "en": "Auto Standby turned off",
           "nl": "Automatische stand-by uitgeschakeld",
@@ -296,6 +394,13 @@
       },
       {
         "id": "aav_on",
+        "hint": {
+          "en": "Fires when automatic volume leveling is switched on.",
+          "nl": "Wordt geactiveerd wanneer automatische volumegelijktrekking wordt ingeschakeld.",
+          "de": "Wird ausgelöst, wenn die automatische Lautstärkeanpassung eingeschaltet wird.",
+          "fr": "Se déclenche lorsque l'égalisation automatique du volume est activée.",
+          "es": "Se activa cuando se enciende la nivelación automática de volumen."
+        },
         "title": {
           "en": "Auto Volume turned on",
           "nl": "Auto-volume ingeschakeld",
@@ -313,6 +418,13 @@
       },
       {
         "id": "aav_off",
+        "hint": {
+          "en": "Fires when automatic volume leveling is switched off.",
+          "nl": "Wordt geactiveerd wanneer automatische volumegelijktrekking wordt uitgeschakeld.",
+          "de": "Wird ausgelöst, wenn die automatische Lautstärkeanpassung ausgeschaltet wird.",
+          "fr": "Se déclenche lorsque l'égalisation automatique du volume est désactivée.",
+          "es": "Se activa cuando se apaga la nivelación automática de volumen."
+        },
         "title": {
           "en": "Auto Volume turned off",
           "nl": "Auto-volume uitgeschakeld",
@@ -330,6 +442,13 @@
       },
       {
         "id": "drc_changed",
+        "hint": {
+          "en": "Fires when the loud/quiet balancing (DRC) setting changes.",
+          "nl": "Wordt geactiveerd wanneer de instelling voor luid/zacht-balans (DRC) verandert.",
+          "de": "Wird ausgelöst, wenn sich die Einstellung für den Laut-Leise-Ausgleich (DRC) ändert.",
+          "fr": "Se déclenche lorsque le réglage d'équilibrage fort/doux (DRC) change.",
+          "es": "Se activa cuando cambia el ajuste de equilibrio fuerte/suave (DRC)."
+        },
         "title": {
           "en": "DRC mode changed",
           "nl": "DRC-modus gewijzigd",
@@ -360,6 +479,13 @@
       },
       {
         "id": "hdmi_passthrough_changed",
+        "hint": {
+          "en": "Fires when HDMI passthrough behavior changes.",
+          "nl": "Wordt geactiveerd wanneer het gedrag van HDMI-doorvoer verandert.",
+          "de": "Wird ausgelöst, wenn sich das Verhalten der HDMI-Durchleitung ändert.",
+          "fr": "Se déclenche lorsque le comportement du passthrough HDMI change.",
+          "es": "Se activa cuando cambia el comportamiento del HDMI passthrough."
+        },
         "title": {
           "en": "HDMI passthrough changed",
           "nl": "HDMI-doorvoer gewijzigd",
@@ -390,6 +516,13 @@
       },
       {
         "id": "bluetooth_mode_changed",
+        "hint": {
+          "en": "Fires when the Bluetooth role (receiving or transmitting) changes.",
+          "nl": "Wordt geactiveerd wanneer de Bluetooth-rol (ontvangen of verzenden) verandert.",
+          "de": "Wird ausgelöst, wenn sich die Bluetooth-Rolle (Empfangen oder Senden) ändert.",
+          "fr": "Se déclenche lorsque le rôle Bluetooth (réception ou émission) change.",
+          "es": "Se activa cuando cambia el rol de Bluetooth (recibir o enviar)."
+        },
         "title": {
           "en": "Bluetooth mode changed",
           "nl": "Bluetooth-modus gewijzigd",
@@ -420,6 +553,13 @@
       },
       {
         "id": "rear_level_changed",
+        "hint": {
+          "en": "Fires whenever the rear-speaker level is adjusted.",
+          "nl": "Wordt geactiveerd wanneer het niveau van de achterluidsprekers wordt aangepast.",
+          "de": "Wird ausgelöst, wenn der Pegel der hinteren Lautsprecher angepasst wird.",
+          "fr": "Se déclenche chaque fois que le niveau des enceintes arrière est ajusté.",
+          "es": "Se activa cada vez que se ajusta el nivel de los altavoces traseros."
+        },
         "title": {
           "en": "Rear level changed",
           "nl": "Achterniveau gewijzigd",
@@ -450,6 +590,13 @@
       },
       {
         "id": "bass_level_changed",
+        "hint": {
+          "en": "Fires whenever the bass level is adjusted.",
+          "nl": "Wordt geactiveerd wanneer het basniveau wordt aangepast.",
+          "de": "Wird ausgelöst, wenn der Bass-Pegel angepasst wird.",
+          "fr": "Se déclenche chaque fois que le niveau des basses est ajusté.",
+          "es": "Se activa cada vez que se ajusta el nivel de graves."
+        },
         "title": {
           "en": "Bass level changed",
           "nl": "Basniveau gewijzigd",
@@ -482,6 +629,13 @@
     "conditions": [
       {
         "id": "input_is",
+        "hint": {
+          "en": "Check which source is currently playing through the soundbar.",
+          "nl": "Controleer welke bron momenteel via de soundbar wordt afgespeeld.",
+          "de": "Prüft, welche Quelle aktuell über die Soundbar abgespielt wird.",
+          "fr": "Vérifie quelle source est actuellement diffusée via la barre de son.",
+          "es": "Comprueba qué fuente se está reproduciendo a través de la barra de sonido."
+        },
         "title": {
           "en": "Input source is [[input]]",
           "nl": "Ingangsbron is [[input]]",
@@ -562,6 +716,13 @@
       },
       {
         "id": "power_is_on",
+        "hint": {
+          "en": "Check whether the soundbar is currently on.",
+          "nl": "Controleer of de soundbar momenteel aanstaat.",
+          "de": "Prüft, ob die Soundbar aktuell eingeschaltet ist.",
+          "fr": "Vérifie si la barre de son est actuellement allumée.",
+          "es": "Comprueba si la barra de sonido está encendida."
+        },
         "title": {
           "en": "Power !{{is|isn't}} on",
           "nl": "Stroom !{{is|is niet}} aan",
@@ -579,6 +740,13 @@
       },
       {
         "id": "is_muted",
+        "hint": {
+          "en": "Check whether the soundbar is currently silenced.",
+          "nl": "Controleer of de soundbar momenteel is gedempt.",
+          "de": "Prüft, ob die Soundbar aktuell stummgeschaltet ist.",
+          "fr": "Vérifie si la barre de son est actuellement coupée.",
+          "es": "Comprueba si la barra de sonido está silenciada."
+        },
         "title": {
           "en": "!{{Is|Isn't}} muted",
           "nl": "!{{Is|Is niet}} gedempt",
@@ -596,6 +764,13 @@
       },
       {
         "id": "night_mode_is_on",
+        "hint": {
+          "en": "Check whether quieter night-time sound is currently active.",
+          "nl": "Controleer of rustiger nachtgeluid momenteel actief is.",
+          "de": "Prüft, ob der leisere Nachtklang aktuell aktiv ist.",
+          "fr": "Vérifie si le son plus discret pour la nuit est actuellement actif.",
+          "es": "Comprueba si el sonido más silencioso para la noche está activo."
+        },
         "title": {
           "en": "Night Mode !{{is|isn't}} on",
           "nl": "Nachtmodus !{{is|is niet}} aan",
@@ -613,6 +788,13 @@
       },
       {
         "id": "voice_enhancer_is_on",
+        "hint": {
+          "en": "Check whether dialogue boosting is currently active.",
+          "nl": "Controleer of dialoogversterking momenteel actief is.",
+          "de": "Prüft, ob die Dialogverstärkung aktuell aktiv ist.",
+          "fr": "Vérifie si l'amplification des dialogues est actuellement active.",
+          "es": "Comprueba si el refuerzo de diálogos está activo."
+        },
         "title": {
           "en": "Voice Enhancer !{{is|isn't}} on",
           "nl": "Stemversterker !{{is|is niet}} aan",
@@ -630,6 +812,13 @@
       },
       {
         "id": "sound_field_is_on",
+        "hint": {
+          "en": "Check whether the wider surround effect is currently active.",
+          "nl": "Controleer of het bredere surround-effect momenteel actief is.",
+          "de": "Prüft, ob der breitere Surround-Effekt aktuell aktiv ist.",
+          "fr": "Vérifie si l'effet surround plus large est actuellement actif.",
+          "es": "Comprueba si el efecto envolvente más amplio está activo."
+        },
         "title": {
           "en": "Sound Field !{{is|isn't}} on",
           "nl": "Geluidsveld !{{is|is niet}} aan",
@@ -647,6 +836,13 @@
       },
       {
         "id": "hdmi_cec_is_on",
+        "hint": {
+          "en": "Check whether TV-remote control of the soundbar is active.",
+          "nl": "Controleer of bediening van de soundbar via de TV-afstandsbediening actief is.",
+          "de": "Prüft, ob die Steuerung der Soundbar per TV-Fernbedienung aktiv ist.",
+          "fr": "Vérifie si la commande de la barre de son via la télécommande TV est active.",
+          "es": "Comprueba si el control de la barra con el mando de la TV está activo."
+        },
         "title": {
           "en": "HDMI-CEC !{{is|isn't}} on",
           "nl": "HDMI-CEC !{{is|is niet}} aan",
@@ -664,6 +860,13 @@
       },
       {
         "id": "auto_standby_is_on",
+        "hint": {
+          "en": "Check whether the soundbar will auto-power-off after inactivity.",
+          "nl": "Controleer of de soundbar automatisch uitschakelt bij inactiviteit.",
+          "de": "Prüft, ob sich die Soundbar bei Inaktivität automatisch ausschaltet.",
+          "fr": "Vérifie si la barre de son s'éteint automatiquement après inactivité.",
+          "es": "Comprueba si la barra de sonido se apaga automáticamente tras inactividad."
+        },
         "title": {
           "en": "Auto Standby !{{is|isn't}} on",
           "nl": "Automatische stand-by !{{is|is niet}} aan",
@@ -681,6 +884,13 @@
       },
       {
         "id": "aav_is_on",
+        "hint": {
+          "en": "Check whether automatic volume leveling is active.",
+          "nl": "Controleer of automatische volumegelijktrekking actief is.",
+          "de": "Prüft, ob die automatische Lautstärkeanpassung aktiv ist.",
+          "fr": "Vérifie si l'égalisation automatique du volume est active.",
+          "es": "Comprueba si la nivelación automática de volumen está activa."
+        },
         "title": {
           "en": "Auto Volume !{{is|isn't}} on",
           "nl": "Auto-volume !{{is|is niet}} aan",
@@ -698,6 +908,13 @@
       },
       {
         "id": "drc_is",
+        "hint": {
+          "en": "Check the current loud/quiet balancing (DRC) setting.",
+          "nl": "Controleer de huidige instelling voor luid/zacht-balans (DRC).",
+          "de": "Prüft die aktuelle Einstellung für den Laut-Leise-Ausgleich (DRC).",
+          "fr": "Vérifie le réglage actuel d'équilibrage fort/doux (DRC).",
+          "es": "Comprueba el ajuste actual de equilibrio fuerte/suave (DRC)."
+        },
         "title": {
           "en": "DRC mode !{{is|isn't}} [[mode]]",
           "nl": "DRC-modus !{{is|is niet}} [[mode]]",
@@ -758,6 +975,13 @@
       },
       {
         "id": "hdmi_passthrough_is",
+        "hint": {
+          "en": "Check the current HDMI passthrough behavior.",
+          "nl": "Controleer het huidige gedrag van HDMI-doorvoer.",
+          "de": "Prüft das aktuelle Verhalten der HDMI-Durchleitung.",
+          "fr": "Vérifie le comportement actuel du passthrough HDMI.",
+          "es": "Comprueba el comportamiento actual del HDMI passthrough."
+        },
         "title": {
           "en": "HDMI passthrough !{{is|isn't}} [[mode]]",
           "nl": "HDMI-doorvoer !{{is|is niet}} [[mode]]",
@@ -818,6 +1042,13 @@
       },
       {
         "id": "bluetooth_mode_is",
+        "hint": {
+          "en": "Check whether Bluetooth is currently receiving from a phone or sending to headphones.",
+          "nl": "Controleer of Bluetooth momenteel ontvangt van een telefoon of verzendt naar een hoofdtelefoon.",
+          "de": "Prüft, ob Bluetooth aktuell von einem Telefon empfängt oder an Kopfhörer sendet.",
+          "fr": "Vérifie si le Bluetooth reçoit actuellement d'un téléphone ou envoie à un casque.",
+          "es": "Comprueba si Bluetooth está recibiendo de un teléfono o enviando a auriculares."
+        },
         "title": {
           "en": "Bluetooth mode !{{is|isn't}} [[mode]]",
           "nl": "Bluetooth-modus !{{is|is niet}} [[mode]]",
@@ -880,6 +1111,13 @@
     "actions": [
       {
         "id": "set_volume_limit_mode",
+        "hint": {
+          "en": "Prevent the soundbar from playing louder than a chosen maximum. Useful for kids' rooms or night-time.",
+          "nl": "Voorkom dat de soundbar harder speelt dan een gekozen maximum. Handig voor kinderkamers of 's nachts.",
+          "de": "Verhindert, dass die Soundbar lauter als ein gewähltes Maximum spielt. Nützlich für Kinderzimmer oder nachts.",
+          "fr": "Empêche la barre de son de dépasser un maximum choisi. Utile pour les chambres d'enfants ou la nuit.",
+          "es": "Evita que la barra de sonido suene por encima del máximo elegido. Útil para habitaciones infantiles o por la noche."
+        },
         "title": {
           "en": "Set volume limit mode to...",
           "nl": "Stel volumebegrenzermodus in op...",
@@ -940,6 +1178,13 @@
       },
       {
         "id": "set_volume_limit_value",
+        "hint": {
+          "en": "Set the maximum volume the soundbar will allow.",
+          "nl": "Stel het maximale volume in dat de soundbar toestaat.",
+          "de": "Legt die maximale Lautstärke fest, die die Soundbar zulässt.",
+          "fr": "Définit le volume maximum autorisé par la barre de son.",
+          "es": "Establece el volumen máximo que permitirá la barra de sonido."
+        },
         "title": {
           "en": "Set maximum volume to...",
           "nl": "Stel maximaal volume in op...",
@@ -971,6 +1216,13 @@
       },
       {
         "id": "volume_up_by",
+        "hint": {
+          "en": "Turn the volume up by the given number of steps.",
+          "nl": "Verhoog het volume met het opgegeven aantal stappen.",
+          "de": "Erhöht die Lautstärke um die angegebene Anzahl an Stufen.",
+          "fr": "Augmente le volume du nombre de pas indiqué.",
+          "es": "Sube el volumen la cantidad de pasos indicada."
+        },
         "title": {
           "en": "Increase volume by...",
           "nl": "Verhoog volume met...",
@@ -1002,6 +1254,13 @@
       },
       {
         "id": "volume_down_by",
+        "hint": {
+          "en": "Turn the volume down by the given number of steps.",
+          "nl": "Verlaag het volume met het opgegeven aantal stappen.",
+          "de": "Verringert die Lautstärke um die angegebene Anzahl an Stufen.",
+          "fr": "Diminue le volume du nombre de pas indiqué.",
+          "es": "Baja el volumen la cantidad de pasos indicada."
+        },
         "title": {
           "en": "Decrease volume by...",
           "nl": "Verlaag volume met...",
@@ -1033,6 +1292,13 @@
       },
       {
         "id": "set_input",
+        "hint": {
+          "en": "Switch which connected source (TV, HDMI, Spotify, Bluetooth, AirPlay) plays through the soundbar.",
+          "nl": "Wissel welke aangesloten bron (TV, HDMI, Spotify, Bluetooth, AirPlay) via de soundbar wordt afgespeeld.",
+          "de": "Wechselt, welche angeschlossene Quelle (TV, HDMI, Spotify, Bluetooth, AirPlay) über die Soundbar wiedergegeben wird.",
+          "fr": "Change quelle source connectée (TV, HDMI, Spotify, Bluetooth, AirPlay) est lue via la barre de son.",
+          "es": "Cambia qué fuente conectada (TV, HDMI, Spotify, Bluetooth, AirPlay) se reproduce en la barra de sonido."
+        },
         "title": {
           "en": "Set input source to...",
           "nl": "Stel ingangsbron in op...",
@@ -1113,6 +1379,13 @@
       },
       {
         "id": "set_drc",
+        "hint": {
+          "en": "Choose how strongly the soundbar evens out loud and quiet sounds. Useful for low-volume or late-night listening.",
+          "nl": "Kies hoe sterk de soundbar harde en zachte geluiden gelijktrekt. Handig bij laag volume of 's avonds laat.",
+          "de": "Wählt, wie stark die Soundbar laute und leise Geräusche ausgleicht. Nützlich bei geringer Lautstärke oder spät abends.",
+          "fr": "Choisit à quel point la barre de son égalise les sons forts et doux. Utile à faible volume ou tard le soir.",
+          "es": "Elige con qué intensidad la barra de sonido equilibra sonidos fuertes y suaves. Útil a bajo volumen o por la noche."
+        },
         "title": {
           "en": "Set dynamic range compressor to...",
           "nl": "Stel dynamisch bereikcompressor in op...",
@@ -1173,6 +1446,13 @@
       },
       {
         "id": "set_hdmi_passthrough",
+        "hint": {
+          "en": "Choose whether HDMI video keeps reaching the TV when the soundbar is off. Handy if a console or player is connected through the soundbar.",
+          "nl": "Kies of HDMI-beeld de TV blijft bereiken terwijl de soundbar uit staat. Handig als een console of speler via de soundbar is aangesloten.",
+          "de": "Wählt, ob HDMI-Video den TV auch dann erreicht, wenn die Soundbar aus ist. Praktisch, wenn eine Konsole oder ein Player über die Soundbar angeschlossen ist.",
+          "fr": "Choisit si la vidéo HDMI continue d'atteindre la TV quand la barre de son est éteinte. Pratique si une console ou un lecteur est connecté via la barre.",
+          "es": "Elige si el vídeo HDMI sigue llegando a la TV cuando la barra está apagada. Útil si una consola o reproductor está conectado a través de la barra."
+        },
         "title": {
           "en": "Set HDMI passthrough to...",
           "nl": "Stel HDMI-doorvoer in op...",
@@ -1233,6 +1513,13 @@
       },
       {
         "id": "turn_voice_enhancer_on",
+        "hint": {
+          "en": "Boost speech so dialogue is easier to follow over music and sound effects.",
+          "nl": "Versterk spraak zodat dialogen beter te volgen zijn boven muziek en geluidseffecten.",
+          "de": "Verstärkt Sprache, damit Dialoge über Musik und Soundeffekten leichter zu verstehen sind.",
+          "fr": "Amplifie la parole pour mieux suivre les dialogues par-dessus la musique et les effets.",
+          "es": "Refuerza la voz para seguir mejor los diálogos sobre música y efectos de sonido."
+        },
         "title": {
           "en": "Turn on Voice Enhancer",
           "nl": "Stemversterker inschakelen",
@@ -1250,6 +1537,13 @@
       },
       {
         "id": "turn_voice_enhancer_off",
+        "hint": {
+          "en": "Restore the normal balance between dialogue, music and effects.",
+          "nl": "Herstel de normale balans tussen dialoog, muziek en effecten.",
+          "de": "Stellt das normale Gleichgewicht zwischen Dialog, Musik und Effekten wieder her.",
+          "fr": "Rétablit l'équilibre normal entre dialogues, musique et effets.",
+          "es": "Restaura el equilibrio normal entre diálogo, música y efectos."
+        },
         "title": {
           "en": "Turn off Voice Enhancer",
           "nl": "Stemversterker uitschakelen",
@@ -1267,6 +1561,13 @@
       },
       {
         "id": "turn_sound_field_on",
+        "hint": {
+          "en": "Spread sound around the room for a wider, more cinematic experience.",
+          "nl": "Verspreid het geluid door de kamer voor een bredere, bioscoopachtige ervaring.",
+          "de": "Verteilt den Klang im Raum für ein breiteres, kinoartiges Erlebnis.",
+          "fr": "Répand le son dans la pièce pour une expérience plus large et cinématographique.",
+          "es": "Distribuye el sonido por la sala para una experiencia más amplia y cinematográfica."
+        },
         "title": {
           "en": "Turn on Sound Field",
           "nl": "Geluidsveld inschakelen",
@@ -1284,6 +1585,13 @@
       },
       {
         "id": "turn_sound_field_off",
+        "hint": {
+          "en": "Play audio in its original form without the wider surround effect.",
+          "nl": "Speel audio af in de oorspronkelijke vorm zonder het bredere surround-effect.",
+          "de": "Gibt Audio in seiner ursprünglichen Form ohne den breiteren Surround-Effekt wieder.",
+          "fr": "Lit l'audio dans sa forme d'origine sans l'effet surround élargi.",
+          "es": "Reproduce el audio en su forma original sin el efecto envolvente más amplio."
+        },
         "title": {
           "en": "Turn off Sound Field",
           "nl": "Geluidsveld uitschakelen",
@@ -1301,6 +1609,13 @@
       },
       {
         "id": "turn_night_mode_on",
+        "hint": {
+          "en": "Soften loud sounds like explosions so you can watch late at night without disturbing others.",
+          "nl": "Dempt harde geluiden zoals explosies, zodat je 's avonds laat kunt kijken zonder anderen te storen.",
+          "de": "Dämpft laute Geräusche wie Explosionen, damit du spät abends schauen kannst, ohne andere zu stören.",
+          "fr": "Atténue les sons forts comme les explosions pour regarder tard le soir sans déranger les autres.",
+          "es": "Atenúa sonidos fuertes como explosiones para ver de noche sin molestar a los demás."
+        },
         "title": {
           "en": "Turn on Night Mode",
           "nl": "Nachtmodus inschakelen",
@@ -1318,6 +1633,13 @@
       },
       {
         "id": "turn_night_mode_off",
+        "hint": {
+          "en": "Restore the full, dynamic sound.",
+          "nl": "Herstel het volledige, dynamische geluid.",
+          "de": "Stellt den vollen, dynamischen Klang wieder her.",
+          "fr": "Rétablit le son complet et dynamique.",
+          "es": "Restaura el sonido completo y dinámico."
+        },
         "title": {
           "en": "Turn off Night Mode",
           "nl": "Nachtmodus uitschakelen",
@@ -1335,6 +1657,13 @@
       },
       {
         "id": "turn_hdmi_cec_on",
+        "hint": {
+          "en": "Let the TV remote also control the soundbar, and let connected devices wake it automatically.",
+          "nl": "Laat de TV-afstandsbediening ook de soundbar bedienen en laat aangesloten apparaten de soundbar automatisch wekken.",
+          "de": "Lässt die TV-Fernbedienung auch die Soundbar steuern und angeschlossene Geräte sie automatisch einschalten.",
+          "fr": "Permet à la télécommande TV de contrôler aussi la barre de son, et aux appareils connectés de la réveiller automatiquement.",
+          "es": "Permite que el mando de la TV también controle la barra y que los dispositivos conectados la enciendan automáticamente."
+        },
         "title": {
           "en": "Turn on HDMI-CEC",
           "nl": "HDMI-CEC inschakelen",
@@ -1352,6 +1681,13 @@
       },
       {
         "id": "turn_hdmi_cec_off",
+        "hint": {
+          "en": "Stop the soundbar from reacting to the TV remote or connected devices.",
+          "nl": "Zorg dat de soundbar niet meer reageert op de TV-afstandsbediening of aangesloten apparaten.",
+          "de": "Verhindert, dass die Soundbar auf die TV-Fernbedienung oder angeschlossene Geräte reagiert.",
+          "fr": "Empêche la barre de son de réagir à la télécommande TV ou aux appareils connectés.",
+          "es": "Evita que la barra reaccione al mando de la TV o a los dispositivos conectados."
+        },
         "title": {
           "en": "Turn off HDMI-CEC",
           "nl": "HDMI-CEC uitschakelen",
@@ -1369,6 +1705,13 @@
       },
       {
         "id": "turn_auto_standby_on",
+        "hint": {
+          "en": "Automatically power the soundbar off after a period of silence to save energy.",
+          "nl": "Schakelt de soundbar automatisch uit na een periode van stilte om energie te besparen.",
+          "de": "Schaltet die Soundbar nach einer Phase der Stille automatisch aus, um Energie zu sparen.",
+          "fr": "Éteint automatiquement la barre de son après une période de silence pour économiser l'énergie.",
+          "es": "Apaga automáticamente la barra de sonido tras un periodo de silencio para ahorrar energía."
+        },
         "title": {
           "en": "Turn on Auto Standby",
           "nl": "Automatische stand-by inschakelen",
@@ -1386,6 +1729,13 @@
       },
       {
         "id": "turn_auto_standby_off",
+        "hint": {
+          "en": "Keep the soundbar powered on even when there is no audio.",
+          "nl": "Houd de soundbar ingeschakeld, zelfs wanneer er geen geluid is.",
+          "de": "Hält die Soundbar eingeschaltet, auch wenn kein Audio abgespielt wird.",
+          "fr": "Garde la barre de son allumée même sans audio.",
+          "es": "Mantén la barra de sonido encendida incluso cuando no hay audio."
+        },
         "title": {
           "en": "Turn off Auto Standby",
           "nl": "Automatische stand-by uitschakelen",
@@ -1403,6 +1753,13 @@
       },
       {
         "id": "turn_aav_on",
+        "hint": {
+          "en": "Keep the volume consistent between loud commercials, quiet shows and movies.",
+          "nl": "Houd het volume consistent tussen luide reclames, rustige series en films.",
+          "de": "Hält die Lautstärke zwischen lauten Werbespots, leisen Serien und Filmen konstant.",
+          "fr": "Maintient un volume constant entre publicités bruyantes, séries calmes et films.",
+          "es": "Mantiene un volumen constante entre anuncios ruidosos, series tranquilas y películas."
+        },
         "title": {
           "en": "Turn on Auto Volume",
           "nl": "Auto-volume inschakelen",
@@ -1420,6 +1777,13 @@
       },
       {
         "id": "turn_aav_off",
+        "hint": {
+          "en": "Let each source play at its own natural volume.",
+          "nl": "Laat elke bron op zijn eigen natuurlijke volume afspelen.",
+          "de": "Lässt jede Quelle mit ihrer natürlichen Lautstärke wiedergegeben werden.",
+          "fr": "Laisse chaque source jouer à son volume naturel.",
+          "es": "Deja que cada fuente se reproduzca a su volumen natural."
+        },
         "title": {
           "en": "Turn off Auto Volume",
           "nl": "Auto-volume uitschakelen",
@@ -1437,6 +1801,13 @@
       },
       {
         "id": "set_rear_level",
+        "hint": {
+          "en": "Fine-tune how prominent the rear speakers are. Higher = more surround feel, lower = more focused front sound.",
+          "nl": "Stel fijn af hoe prominent de achterluidsprekers zijn. Hoger = meer surroundgevoel, lager = meer gerichte voorkant.",
+          "de": "Stellt fein ein, wie präsent die hinteren Lautsprecher sind. Höher = mehr Surround-Gefühl, niedriger = fokussierterer Frontklang.",
+          "fr": "Ajuste la présence des enceintes arrière. Plus haut = plus de surround, plus bas = son frontal plus concentré.",
+          "es": "Ajusta la presencia de los altavoces traseros. Más alto = más envolvente, más bajo = sonido más centrado al frente."
+        },
         "title": {
           "en": "Set rear level to...",
           "nl": "Stel achterniveau in op...",
@@ -1468,6 +1839,13 @@
       },
       {
         "id": "set_bass_level",
+        "hint": {
+          "en": "Fine-tune how strong the deep bass and rumble feel.",
+          "nl": "Stel fijn af hoe sterk de diepe bas en het dreunen aanvoelen.",
+          "de": "Stellt fein ein, wie kräftig tiefer Bass und Grollen wirken.",
+          "fr": "Ajuste la puissance des basses profondes et du grondement.",
+          "es": "Ajusta la intensidad de los graves profundos y la vibración."
+        },
         "title": {
           "en": "Set bass level to...",
           "nl": "Stel basniveau in op...",
@@ -1499,6 +1877,13 @@
       },
       {
         "id": "set_bluetooth_mode",
+        "hint": {
+          "en": "Choose whether the soundbar receives audio from a phone/tablet, or streams its own sound to wireless headphones/speakers.",
+          "nl": "Kies of de soundbar audio ontvangt van een telefoon/tablet, of het eigen geluid naar draadloze hoofdtelefoon/speakers verzendt.",
+          "de": "Wählt, ob die Soundbar Audio von einem Telefon/Tablet empfängt oder ihren eigenen Klang an drahtlose Kopfhörer/Lautsprecher sendet.",
+          "fr": "Choisit si la barre de son reçoit l'audio d'un téléphone/tablette ou envoie son propre son à des écouteurs/enceintes sans fil.",
+          "es": "Elige si la barra recibe audio de un teléfono/tableta o envía su propio sonido a auriculares/altavoces inalámbricos."
+        },
         "title": {
           "en": "Set Bluetooth mode to...",
           "nl": "Stel Bluetooth-modus in op...",
