@@ -3,6 +3,132 @@
 const Homey = require('homey');
 const BraviaClient = require('../../lib/BraviaClient');
 
+// Single source of truth for capability ↔ stateKey ↔ client method ↔ trigger.
+// Each entry describes how to:
+//   - decode(state)              → capability value
+//   - set(client, value)         → push capability value to the device
+//   - triggerOnChange(value)     → trigger card id (or null)
+//   - triggerToken(value)        → token object for the trigger card
+//   - when(device)               → only apply this entry when predicate is true (used for dynamic bass cap)
+const CAPS = [
+  {
+    capability: 'onoff', stateKey: 'power',
+    decode: (v) => v === 'on',
+    set: (c, v) => c.setPower(v ? 'on' : 'off'),
+    triggerOnChange: (v) => (v ? 'power_on' : 'power_off'),
+  },
+  {
+    capability: 'volume_set', stateKey: 'volume',
+    decode: (v) => v / 100,
+    set: (c, v, device) => c.setVolume(device._applyVolumeLimit(Math.round(v * 100))),
+  },
+  {
+    capability: 'volume_mute', stateKey: 'mute',
+    decode: (v) => v === 'on',
+    set: (c, v) => c.setMute(v ? 'on' : 'off'),
+  },
+  {
+    capability: 'bravia_input', stateKey: 'input',
+    decode: (v) => v,
+    set: (c, v) => c.setInput(v),
+    triggerOnChange: () => 'input_changed',
+    triggerToken: (v) => ({ input: v }),
+  },
+  {
+    capability: 'bravia_night_mode', stateKey: 'nightMode',
+    decode: (v) => v === 'on',
+    set: (c, v) => c.setNightMode(v ? 'on' : 'off'),
+    triggerOnChange: (v) => (v ? 'night_mode_on' : 'night_mode_off'),
+  },
+  {
+    capability: 'bravia_voice_enhancer', stateKey: 'voiceEnhancer',
+    decode: (v) => v === 'upon',
+    set: (c, v) => c.setVoiceEnhancer(v ? 'upon' : 'upoff'),
+    triggerOnChange: (v) => (v ? 'voice_enhancer_on' : 'voice_enhancer_off'),
+  },
+  {
+    capability: 'bravia_sound_field', stateKey: 'soundField',
+    decode: (v) => v === 'on',
+    set: (c, v) => c.setSoundField(v ? 'on' : 'off'),
+    triggerOnChange: (v) => (v ? 'sound_field_on' : 'sound_field_off'),
+  },
+  {
+    capability: 'bravia_rear_level', stateKey: 'rearLevel',
+    decode: (v) => v,
+    set: (c, v) => c.setRearLevel(v),
+    triggerOnChange: () => 'rear_level_changed',
+    triggerToken: (v) => ({ level: v }),
+  },
+  {
+    capability: 'bravia_hdmi_cec', stateKey: 'hdmiCec',
+    decode: (v) => v === 'on',
+    set: (c, v) => c.setHdmiCec(v ? 'on' : 'off'),
+    triggerOnChange: (v) => (v ? 'hdmi_cec_on' : 'hdmi_cec_off'),
+  },
+  {
+    capability: 'bravia_auto_standby', stateKey: 'autoStandby',
+    decode: (v) => v === 'on',
+    set: (c, v) => c.setAutoStandby(v ? 'on' : 'off'),
+    triggerOnChange: (v) => (v ? 'auto_standby_on' : 'auto_standby_off'),
+  },
+  {
+    capability: 'bravia_drc', stateKey: 'drc',
+    decode: (v) => v,
+    set: (c, v) => c.setDrc(v),
+    triggerOnChange: () => 'drc_changed',
+    triggerToken: (v) => ({ mode: v }),
+  },
+  {
+    capability: 'bravia_aav', stateKey: 'aav',
+    decode: (v) => v === 'on',
+    set: (c, v) => c.setAav(v ? 'on' : 'off'),
+    triggerOnChange: (v) => (v ? 'aav_on' : 'aav_off'),
+  },
+  {
+    capability: 'bravia_hdmi_passthrough', stateKey: 'hdmiPassthrough',
+    decode: (v) => v,
+    set: (c, v) => c.setHdmiPassthrough(v),
+    triggerOnChange: () => 'hdmi_passthrough_changed',
+    triggerToken: (v) => ({ mode: v }),
+  },
+  {
+    capability: 'bravia_bluetooth_mode', stateKey: 'bluetoothMode',
+    decode: (v) => v,
+    set: (c, v) => c.setBluetoothMode(v),
+    triggerOnChange: () => 'bluetooth_mode_changed',
+    triggerToken: (v) => ({ mode: v }),
+  },
+  {
+    capability: 'bravia_bass_level', stateKey: 'bassLevel',
+    when: (d) => d._hasSubwoofer === true,
+    decode: (v) => v,
+    set: (c, v) => c.setBassLevel(v),
+    triggerOnChange: () => 'bass_level_changed',
+    triggerToken: (v) => ({ level: v }),
+  },
+  {
+    capability: 'bravia_bass_select', stateKey: 'bassLevel',
+    when: (d) => d._hasSubwoofer === false,
+    decode: (v) => String(v),
+    set: (c, v) => c.setBassLevel(parseInt(v, 10)),
+    triggerOnChange: () => 'bass_level_changed',
+    triggerToken: (v) => ({ level: parseInt(v, 10) }),
+  },
+];
+
+const TRIGGER_IDS = [
+  'volume_limit_reached', 'input_changed',
+  'power_on', 'power_off',
+  'night_mode_on', 'night_mode_off',
+  'voice_enhancer_on', 'voice_enhancer_off',
+  'sound_field_on', 'sound_field_off',
+  'hdmi_cec_on', 'hdmi_cec_off',
+  'auto_standby_on', 'auto_standby_off',
+  'aav_on', 'aav_off',
+  'drc_changed', 'hdmi_passthrough_changed', 'bluetooth_mode_changed',
+  'rear_level_changed', 'bass_level_changed',
+];
+
 class BraviaTheaterQuadDevice extends Homey.Device {
   async onInit() {
     this.log('BraviaTheaterQuadDevice has been initialized');
@@ -17,11 +143,11 @@ class BraviaTheaterQuadDevice extends Homey.Device {
       logger: this,
     });
 
-    // Volume limit trigger card
-    this._volumeLimitTrigger = this.homey.flow.getDeviceTriggerCard('volume_limit_reached');
-
-    // Input changed trigger card
-    this._inputChangedTrigger = this.homey.flow.getDeviceTriggerCard('input_changed');
+    // Cache all trigger card refs in a single map
+    this._triggers = {};
+    for (const id of TRIGGER_IDS) {
+      this._triggers[id] = this.homey.flow.getDeviceTriggerCard(id);
+    }
 
     // Fast-path volume limit: fires directly from _processMessage in BraviaClient
     // This is the fastest possible enforcement — before the normal event chain
@@ -34,7 +160,7 @@ class BraviaTheaterQuadDevice extends Homey.Device {
       if (currentVolume > max && !this._volumeLimitEnforcing) {
         this._volumeLimitEnforcing = true;
         this.log(`[FAST-PATH] Volume ${currentVolume} exceeds limit ${max}, enforcing immediately`);
-        this._volumeLimitTrigger.trigger(this).catch(this.error);
+        this._triggers.volume_limit_reached.trigger(this).catch(this.error);
         this._client
           .setVolume(max)
           .then(() => this._safeSetCapabilityValue('volume_set', max / 100))
@@ -83,7 +209,8 @@ class BraviaTheaterQuadDevice extends Homey.Device {
     // Detect optional subwoofer (no sub: bass range 0-2, with sub: bass range -10 to 10)
     const hasSubwoofer = await this._client.detectSubwoofer();
     await this._configureBassCapability(hasSubwoofer);
-    await this.setSettings({ has_subwoofer: hasSubwoofer ? 'Yes' : 'No' }).catch(this.error);
+    const yesNo = hasSubwoofer ? this.homey.__('labels.yes') : this.homey.__('labels.no');
+    await this.setSettings({ has_subwoofer: yesNo }).catch(this.error);
 
     // Update device info settings
     const state = this._client.state;
@@ -151,33 +278,35 @@ class BraviaTheaterQuadDevice extends Homey.Device {
         await this.removeCapability('bravia_bass_level');
       }
     }
+
+    // Register the listener for whichever bass capability is now active.
+    // (Capability listener registration is idempotent per capability instance,
+    // but the cap may have been added after onInit, so we (re-)register here.)
+    this._registerBassListener();
+  }
+
+  _registerBassListener() {
+    if (this._bassListenerRegistered) return;
+    const bassCap = CAPS.find((c) => c.stateKey === 'bassLevel' && c.when && c.when(this) && this.hasCapability(c.capability));
+    if (!bassCap) return;
+    this.registerCapabilityListener(bassCap.capability, async (value) => {
+      await bassCap.set(this._client, value, this);
+    });
+    this._bassListenerRegistered = true;
   }
 
   // --- State sync ---
 
+  _capsForDevice() {
+    return CAPS.filter((cap) => (cap.when ? cap.when(this) : true));
+  }
+
   async _syncAllStates() {
     const state = this._client.state;
-
-    await this._safeSetCapabilityValue('onoff', state.power === 'on');
-    await this._safeSetCapabilityValue('volume_set', state.volume / 100);
-    await this._safeSetCapabilityValue('bravia_input', state.input);
-    await this._safeSetCapabilityValue('bravia_night_mode', state.nightMode === 'on');
-    await this._safeSetCapabilityValue('bravia_voice_enhancer', state.voiceEnhancer === 'upon');
-    await this._safeSetCapabilityValue('bravia_sound_field', state.soundField === 'on');
-    await this._safeSetCapabilityValue('bravia_rear_level', state.rearLevel);
-    await this._safeSetCapabilityValue('bravia_hdmi_cec', state.hdmiCec === 'on');
-    await this._safeSetCapabilityValue('bravia_auto_standby', state.autoStandby === 'on');
-    await this._safeSetCapabilityValue('bravia_drc', state.drc);
-    await this._safeSetCapabilityValue('bravia_aav', state.aav === 'on');
-    await this._safeSetCapabilityValue('volume_mute', state.mute === 'on');
-    await this._safeSetCapabilityValue('bravia_hdmi_passthrough', state.hdmiPassthrough);
-    await this._safeSetCapabilityValue('bravia_bluetooth_mode', state.bluetoothMode);
-
-    // Bass level
-    if (this._hasSubwoofer) {
-      await this._safeSetCapabilityValue('bravia_bass_level', state.bassLevel);
-    } else {
-      await this._safeSetCapabilityValue('bravia_bass_select', String(state.bassLevel));
+    for (const cap of this._capsForDevice()) {
+      const raw = state[cap.stateKey];
+      if (raw === undefined || raw === null) continue;
+      await this._safeSetCapabilityValue(cap.capability, cap.decode(raw));
     }
   }
 
@@ -201,149 +330,52 @@ class BraviaTheaterQuadDevice extends Homey.Device {
 
     this._client.on('disconnected', () => {
       this.log('Client disconnected');
-      this.setUnavailable('Device disconnected').catch(this.error);
+      this.setUnavailable(this.homey.__('errors.disconnected')).catch(this.error);
     });
 
-    // State changes from notifications
-    this._client.on('stateChanged:power', (value) => {
-      this._safeSetCapabilityValue('onoff', value === 'on');
-    });
+    // Group CAPS by stateKey so we register exactly one listener per state key
+    const byStateKey = new Map();
+    for (const cap of CAPS) {
+      if (!byStateKey.has(cap.stateKey)) byStateKey.set(cap.stateKey, []);
+      byStateKey.get(cap.stateKey).push(cap);
+    }
 
-    this._client.on('stateChanged:volume', (value) => {
-      this._safeSetCapabilityValue('volume_set', value / 100);
-    });
-
-    this._client.on('stateChanged:input', (value) => {
-      this._safeSetCapabilityValue('bravia_input', value);
-      this._inputChangedTrigger.trigger(this, { input: value }).catch(this.error);
-    });
-
-    this._client.on('stateChanged:rearLevel', (value) => {
-      this._safeSetCapabilityValue('bravia_rear_level', value);
-    });
-
-    this._client.on('stateChanged:bassLevel', (value) => {
-      if (this._hasSubwoofer) {
-        this._safeSetCapabilityValue('bravia_bass_level', value);
-      } else {
-        this._safeSetCapabilityValue('bravia_bass_select', String(value));
-      }
-    });
-
-    this._client.on('stateChanged:voiceEnhancer', (value) => {
-      this._safeSetCapabilityValue('bravia_voice_enhancer', value === 'upon');
-    });
-
-    this._client.on('stateChanged:soundField', (value) => {
-      this._safeSetCapabilityValue('bravia_sound_field', value === 'on');
-    });
-
-    this._client.on('stateChanged:nightMode', (value) => {
-      this._safeSetCapabilityValue('bravia_night_mode', value === 'on');
-    });
-
-    this._client.on('stateChanged:hdmiCec', (value) => {
-      this._safeSetCapabilityValue('bravia_hdmi_cec', value === 'on');
-    });
-
-    this._client.on('stateChanged:autoStandby', (value) => {
-      this._safeSetCapabilityValue('bravia_auto_standby', value === 'on');
-    });
-
-    this._client.on('stateChanged:drc', (value) => {
-      this._safeSetCapabilityValue('bravia_drc', value);
-    });
-
-    this._client.on('stateChanged:aav', (value) => {
-      this._safeSetCapabilityValue('bravia_aav', value === 'on');
-    });
-
-    this._client.on('stateChanged:mute', (value) => {
-      this._safeSetCapabilityValue('volume_mute', value === 'on');
-    });
-
-    this._client.on('stateChanged:hdmiPassthrough', (value) => {
-      this._safeSetCapabilityValue('bravia_hdmi_passthrough', value);
-    });
-
-    this._client.on('stateChanged:bluetoothMode', (value) => {
-      this._safeSetCapabilityValue('bravia_bluetooth_mode', value);
-    });
+    for (const [stateKey, caps] of byStateKey) {
+      this._client.on(`stateChanged:${stateKey}`, (value) => {
+        // Apply each cap whose `when` predicate matches; emit at most one trigger per fired event
+        const firedTriggers = new Set();
+        for (const cap of caps) {
+          if (cap.when && !cap.when(this)) continue;
+          const decoded = cap.decode(value);
+          this._safeSetCapabilityValue(cap.capability, decoded);
+          if (cap.triggerOnChange) {
+            const triggerId = cap.triggerOnChange(decoded);
+            if (triggerId && !firedTriggers.has(triggerId)) {
+              firedTriggers.add(triggerId);
+              const tokens = cap.triggerToken ? cap.triggerToken(decoded) : undefined;
+              const card = this._triggers[triggerId];
+              if (card) card.trigger(this, tokens).catch(this.error);
+            }
+          }
+        }
+      });
+    }
   }
 
   // --- Capability listeners ---
 
   _registerCapabilityListeners() {
-    this.registerCapabilityListener('onoff', async (value) => {
-      await this._client.setPower(value ? 'on' : 'off');
-    });
-
-    this.registerCapabilityListener('volume_set', async (value) => {
-      const volume = this._applyVolumeLimit(Math.round(value * 100));
-      await this._client.setVolume(volume);
-    });
-
-    this.registerCapabilityListener('bravia_input', async (value) => {
-      await this._client.setInput(value);
-    });
-
-    this.registerCapabilityListener('bravia_night_mode', async (value) => {
-      await this._client.setNightMode(value ? 'on' : 'off');
-    });
-
-    this.registerCapabilityListener('bravia_voice_enhancer', async (value) => {
-      await this._client.setVoiceEnhancer(value ? 'upon' : 'upoff');
-    });
-
-    this.registerCapabilityListener('bravia_sound_field', async (value) => {
-      await this._client.setSoundField(value ? 'on' : 'off');
-    });
-
-    this.registerCapabilityListener('bravia_rear_level', async (value) => {
-      await this._client.setRearLevel(value);
-    });
-
-    // Bass level (subwoofer)
-    if (this.hasCapability('bravia_bass_level')) {
-      this.registerCapabilityListener('bravia_bass_level', async (value) => {
-        await this._client.setBassLevel(value);
+    // Register a listener for every CAP that does NOT depend on the dynamic bass
+    // detection. Bass listeners are registered separately from _configureBassCapability.
+    for (const cap of CAPS) {
+      if (cap.when) continue; // dynamic; handled by _registerBassListener
+      if (!this.hasCapability(cap.capability)) continue;
+      this.registerCapabilityListener(cap.capability, async (value) => {
+        await cap.set(this._client, value, this);
       });
     }
-
-    // Bass select (no subwoofer)
-    if (this.hasCapability('bravia_bass_select')) {
-      this.registerCapabilityListener('bravia_bass_select', async (value) => {
-        await this._client.setBassLevel(parseInt(value, 10));
-      });
-    }
-
-    this.registerCapabilityListener('bravia_hdmi_cec', async (value) => {
-      await this._client.setHdmiCec(value ? 'on' : 'off');
-    });
-
-    this.registerCapabilityListener('bravia_auto_standby', async (value) => {
-      await this._client.setAutoStandby(value ? 'on' : 'off');
-    });
-
-    this.registerCapabilityListener('bravia_drc', async (value) => {
-      await this._client.setDrc(value);
-    });
-
-    this.registerCapabilityListener('bravia_aav', async (value) => {
-      await this._client.setAav(value ? 'on' : 'off');
-    });
-
-    this.registerCapabilityListener('volume_mute', async (value) => {
-      await this._client.setMute(value ? 'on' : 'off');
-    });
-
-    this.registerCapabilityListener('bravia_hdmi_passthrough', async (value) => {
-      await this._client.setHdmiPassthrough(value);
-    });
-
-    this.registerCapabilityListener('bravia_bluetooth_mode', async (value) => {
-      await this._client.setBluetoothMode(value);
-    });
+    // Bass listener (in case _configureBassCapability already ran and added the cap)
+    this._registerBassListener();
   }
 
   // --- Volume limiter ---
@@ -383,7 +415,7 @@ class BraviaTheaterQuadDevice extends Homey.Device {
       this.log(`Active volume limit: volume ${currentVolume} exceeds limit ${max}, enforcing`);
 
       // Trigger flow card
-      this._volumeLimitTrigger.trigger(this).catch(this.error);
+      this._triggers.volume_limit_reached.trigger(this).catch(this.error);
 
       // Enforce limit
       try {
@@ -392,6 +424,15 @@ class BraviaTheaterQuadDevice extends Homey.Device {
       } catch (err) {
         this.error('Failed to enforce volume limit:', err.message);
       }
+    }
+  }
+
+  // Public helper used by both onSettings and the volume-limit flow actions to
+  // apply the side-effects of a volume-limit change without re-entering onSettings.
+  applyVolumeLimitSettings() {
+    this._updateVolumeSliderLimit();
+    if (this._getVolumeLimitMode() === 'active') {
+      this._enforceVolumeLimit(this._client.state.volume).catch(this.error);
     }
   }
 
@@ -421,13 +462,11 @@ class BraviaTheaterQuadDevice extends Homey.Device {
     if (changedKeys.includes('volume_limit_mode') || changedKeys.includes('volume_limit_max')) {
       this.log(`Volume limit updated: mode=${newSettings.volume_limit_mode}, max=${newSettings.volume_limit_max}`);
 
-      // Update the slider max to reflect the new limit
+      // Update slider max + enforce if active. We pass newSettings to the slider helper
+      // because Homey hasn't persisted them yet at this point.
       this._updateVolumeSliderLimit(newSettings);
-
-      // If switching to active, immediately check current volume
       if (newSettings.volume_limit_mode === 'active') {
-        const currentVolume = this._client.state.volume;
-        await this._enforceVolumeLimit(currentVolume);
+        await this._enforceVolumeLimit(this._client.state.volume);
       }
     }
 
@@ -454,19 +493,21 @@ class BraviaTheaterQuadDevice extends Homey.Device {
       await this.setStoreValue('address', newAddress);
       await this.setSettings({ ip_address: newAddress }).catch(this.error);
 
-      // Reconnect with new address
-      this._client.host = newAddress;
-      await this._client.disconnect();
-      this._client._shouldReconnect = true;
       try {
+        await this._client.setHost(newAddress);
         await this._client.connect();
         await this._initializeDevice();
       } catch (err) {
         this.error('Failed to reconnect after address change:', err.message);
       }
+      // _initializeDevice handles setAvailable / setUnavailable on its own
+      return;
     }
 
-    this.setAvailable().catch(this.error);
+    // Address unchanged — only mark available if we're not stuck on External Control disabled
+    if (this._client && this._client.state.power !== 'ERR') {
+      this.setAvailable().catch(this.error);
+    }
   }
 
   onDiscoveryAddressChanged(discoveryResult) {
@@ -489,6 +530,7 @@ class BraviaTheaterQuadDevice extends Homey.Device {
   }
 
   async onUninit() {
+    this.log('Device uninit, cleaning up');
     this._stopExternalControlRecovery();
     if (this._client) {
       this._client.destroy();

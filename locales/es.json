@@ -1,6 +1,11 @@
 {
   "errors": {
-    "external_control_disabled": "El control externo está desactivado. Actívalo en la aplicación Sony Bravia para controlar este dispositivo."
+    "external_control_disabled": "El control externo está desactivado. Actívalo en la aplicación Sony Bravia para controlar este dispositivo.",
+    "disconnected": "Dispositivo desconectado"
+  },
+  "labels": {
+    "yes": "Sí",
+    "no": "No"
   },
   "drivers": {
     "bravia-theater-quad": {
