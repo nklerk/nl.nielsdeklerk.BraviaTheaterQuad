@@ -16,5 +16,8 @@
   },
   "1.1.0": {
     "en": "Flow cards for every capability: triggers for power, modes and levels; conditions for the current state; actions for HDMI-CEC, Auto Standby, Auto Volume, Bluetooth mode, rear level and bass level. Legacy actions now reliably push changes to the device, and the device no longer drops offline due to a discovery race."
+  },
+  "1.1.1": {
+    "en": "add hint text with i18n support for all flow trigger, condition, and action cards"
   }
 }
